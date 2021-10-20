@@ -46,14 +46,9 @@ public class Signup2 extends AppCompatActivity {
         //make appropriate class
         if(type.equals("Member")){
             Member member = new Member(firstname, lastname, username, password, email);
-            System.out.println(member.getLastname());
-            System.out.println(member.getFirstname());
         }
         else if (type.equals("Instructor")){
             Instructor instructor = new Instructor(firstname, lastname, username, password, email);
-            System.out.println(instructor.getFirstname());
-            System.out.println(instructor.getLastname());
-
         }
     }
 }
