@@ -43,12 +43,19 @@ public class Signup2 extends AppCompatActivity {
             return;
         }
 
-        //make appropriate class
+        //create database object to insert into
+        DataBaseHelper db = new DataBaseHelper(Signup2.this);
+
+        //make appropriate class and add to database
         if(type.equals("Member")){
             Member member = new Member(firstname, lastname, username, password, email);
+            System.out.println(member.getId());
+            db.addMember(member);
         }
         else if (type.equals("Instructor")){
             Instructor instructor = new Instructor(firstname, lastname, username, password, email);
+            boolean success = db.addInstructor(instructor);
+            System.out.println(success);
         }
     }
 }

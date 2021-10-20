@@ -6,7 +6,7 @@ public abstract class User {
     protected String username;
     protected String password;
     protected String email;
-    //int id;
+    protected static int id;
 
     public User(String firstname, String lastname, String username, String password, String email){
         this.firstname = firstname;
@@ -14,6 +14,7 @@ public abstract class User {
         this.username = username;
         this.password = password;
         this.email = email;
+        id++;
     }
 
     //getters and setters
@@ -36,4 +37,6 @@ public abstract class User {
     public String getEmail(){
         return email;
     }
+
+    public int getId() {return id;}
 }
