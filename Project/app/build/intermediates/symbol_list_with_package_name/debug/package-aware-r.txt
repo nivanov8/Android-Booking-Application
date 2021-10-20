@@ -2015,6 +2015,7 @@ id fitToContents
 id fixed
 id flip
 id floating
+id fname
 id forever
 id fragment_container_view_tag
 id frost
@@ -2061,6 +2062,7 @@ id linear
 id listMode
 id list_item
 id login
+id logout
 id masked
 id match_constraint
 id match_parent
@@ -2258,6 +2260,7 @@ id textTop
 id textView
 id textView10
 id textView11
+id textView12
 id textView2
 id textView3
 id textView4
@@ -2291,6 +2294,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id type
+id uname
 id unchecked
 id uniform
 id unlabeled
@@ -2384,6 +2389,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
+layout activity_login_page
 layout activity_main
 layout activity_signup
 layout activity_signup2

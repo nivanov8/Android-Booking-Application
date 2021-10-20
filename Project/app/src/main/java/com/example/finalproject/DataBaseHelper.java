@@ -17,6 +17,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String MEMBER_EMAIL = "MEMBER_EMAIL";
     public static final String MEMBER_ID = "MEMBER_ID";
 
+    public static final String INSTRUCTOR_TABLE = "INSTRUCTOR_TABLE";
+    public static final String INSTRUCTOR_FIRSTNAME = "INSTRUCTOR_FNAME";
+    public static final String INSTRUCTOR_LASTNAME = "INSTRUCTOR_LNAME";
+    public static final String INSTRUCTOR_USERNAME = "INSTRUCTOR_USERNAME";
+    public static final String INSTRUCTOR_PASSWORD = "INSTRUCTOR_PASSWORD";
+    public static final String INSTRUCTOR_EMAIL = "INSTRUCTOR_EMAIL";
+    public static final String INSTRUCTOR_ID = "INSTRUCTOR_ID";
+
+
 
 
     public DataBaseHelper(@Nullable Context context) {
@@ -25,11 +34,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE " +  MEMBER_TABLE + " (" + MEMBER_ID + " INTEGER PRIMARY KEY, " + MEMBER_FIRSTNAME +
+        String createMembersTable = "CREATE TABLE " +  MEMBER_TABLE + " (" + MEMBER_ID + " INTEGER PRIMARY KEY, " + MEMBER_FIRSTNAME +
                 " TEXT, " +  MEMBER_LASTNAME + " TEXT, " + MEMBER_USERNAME + " TEXT, " + MEMBER_PASSWORD +" TEXT, " +
                 MEMBER_EMAIL + " TEXT)";
 
-        db.execSQL(createTable);
+        String createInstructorsTable = "CREATE TABLE " + INSTRUCTOR_TABLE + " (" + INSTRUCTOR_ID + " INTEGER PRIMARY KEY, " + INSTRUCTOR_FIRSTNAME +
+                " TEXT, " + INSTRUCTOR_LASTNAME + " TEXT, " + INSTRUCTOR_USERNAME + " TEXT, " + INSTRUCTOR_PASSWORD + " TEXT, " +
+                INSTRUCTOR_EMAIL + " TEXT)";
+
+        db.execSQL(createInstructorsTable);
+        db.execSQL(createMembersTable);
     }
 
     @Override
@@ -59,6 +73,28 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         else{
             return true;
         }
+    }
 
+    public boolean addInstructor(Instructor instructor){
+        // retrieve the database and create values to put into the database
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        //add attributes to values
+        cv.put(INSTRUCTOR_ID, instructor.getId());
+        cv.put(INSTRUCTOR_FIRSTNAME, instructor.getFirstname());
+        cv.put(INSTRUCTOR_LASTNAME, instructor.getLastname());
+        cv.put(INSTRUCTOR_USERNAME, instructor.getUsername());
+        cv.put(INSTRUCTOR_PASSWORD, instructor.getPassword());
+        cv.put(INSTRUCTOR_EMAIL, instructor.getEmail());
+
+        long insert = db.insert(INSTRUCTOR_TABLE, null, cv);
+
+        if(insert == -1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

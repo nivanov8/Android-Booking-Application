@@ -50,9 +50,37 @@ public class Signup2 extends AppCompatActivity {
         if(type.equals("Member")){
             Member member = new Member(firstname, lastname, username, password, email);
             db.addMember(member);
+
+            Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+
+            //get username and firstname to pass to other view
+            String uname = member.getUsername();
+            String fname = member.getFirstname();
+
+            intent2.putExtra("type", "member");
+            intent2.putExtra("firstName", fname);
+            intent2.putExtra("username", uname);
+
+            startActivity(intent2);
+
         }
         else if (type.equals("Instructor")){
             Instructor instructor = new Instructor(firstname, lastname, username, password, email);
+            db.addInstructor(instructor);
+
+            Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+
+            //get username and firstname to pass to other view
+            String uname = instructor.getUsername();
+            String fname = instructor.getFirstname();
+
+            intent2.putExtra("type", "instructor");
+            intent2.putExtra("firstName", fname);
+            intent2.putExtra("username", uname);
+
+            startActivity(intent2);
         }
+
+
     }
 }
