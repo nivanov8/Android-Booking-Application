@@ -50,7 +50,6 @@ public class Signup2 extends AppCompatActivity {
         if(type.equals("Member")){
             Member member = db.addMember(firstname, lastname, username, password, email);
 
-            System.out.println(member.getId());
             Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
 
             //get username and firstname to pass to other view
@@ -62,12 +61,10 @@ public class Signup2 extends AppCompatActivity {
             intent2.putExtra("username", uname);
 
             startActivity(intent2);
-
         }
         else if (type.equals("Instructor")){
             Instructor instructor = db.addInstructor(firstname, lastname, username, password, email);
 
-            System.out.println(instructor.getId());
             Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
 
             //get username and firstname to pass to other view
@@ -81,6 +78,4 @@ public class Signup2 extends AppCompatActivity {
             startActivity(intent2);
         }
     }
-
-
 }

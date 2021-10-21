@@ -20,11 +20,9 @@ public class CreateClass extends AppCompatActivity {
     public void onCreateClassClick(View view) { //throws exception
         EditText text1 = (EditText) findViewById(R.id.className);
         EditText text2 = (EditText) findViewById(R.id.classDescription);
-        TextView text3 = (TextView) findViewById(R.id.classAddSuccess); //maybe make prompt that class has been added
 
         String name = text1.getText().toString().trim();
         String description = text2.getText().toString().trim();
-
 
         //if nothing entered do nothing
         if (name.length() == 0 || description.length() == 0 ){
@@ -35,7 +33,6 @@ public class CreateClass extends AppCompatActivity {
 
         Class cls = dbHelper.addClass(name, description);
         Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
-
         finish();
     }
 

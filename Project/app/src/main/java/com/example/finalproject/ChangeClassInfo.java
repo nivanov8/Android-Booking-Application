@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ChangeClassInfo extends AppCompatActivity {
 
@@ -47,6 +48,7 @@ public class ChangeClassInfo extends AppCompatActivity {
         dbHelper.updateClass(classId, newName, newDesc);
 
         Intent intent2 = new Intent(getApplicationContext(), EditClass.class);
+        Toast.makeText(this, "Class updated", Toast.LENGTH_SHORT).show();
         finish();
         startActivity(intent2);
     }

@@ -42,7 +42,6 @@ public class Signup extends AppCompatActivity {
                 String type = instructor.getText().toString();
                 intent.putExtra("type", type);
             }
-
             startActivity(intent);
         }
     }

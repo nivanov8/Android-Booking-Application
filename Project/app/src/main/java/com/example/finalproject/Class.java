@@ -12,6 +12,7 @@ public class Class {
 
     }
 
+    //getters
     public String getName(){
         return name;
     }

@@ -13,7 +13,6 @@ public class Login extends AppCompatActivity {
     private final String admin_username = "admin";
     private final String admin_password = "admin123";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +40,6 @@ public class Login extends AppCompatActivity {
         else{
             DataBaseHelper dbHelper = new DataBaseHelper(Login.this);
             User foundUser = dbHelper.findUser(username, password);
-            //System.out.println(foundUser.getClass().getName());
 
             if (foundUser instanceof Member){
                 Member user = (Member) foundUser;
@@ -71,7 +69,6 @@ public class Login extends AppCompatActivity {
             else{
                 return;
             }
-
         }
     }
 }

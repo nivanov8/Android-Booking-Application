@@ -48,9 +48,6 @@ public class EditClass extends AppCompatActivity implements AdapterView.OnItemCl
         classLV.setAdapter(classAdapter);
 
         classLV.setOnItemClickListener(this);
-
-        //startActivity(getIntent());
-
     }
 
 
@@ -65,9 +62,8 @@ public class EditClass extends AppCompatActivity implements AdapterView.OnItemCl
         intent.putExtra("id", id);
         intent.putExtra("name", name);
         intent.putExtra("description", description);
-        System.out.println("HERE");
+
         finish();
         startActivity(intent);
-
     }
 }

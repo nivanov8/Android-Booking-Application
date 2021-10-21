@@ -22,8 +22,6 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
     ArrayList<String> userPasswords;
     ArrayList<String> userEmails;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +67,7 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
         else if(users.get(i) instanceof Instructor){
             type = "instructor";
         }
-        //NEED TO THINK OF SOMETHING HERE
+        //MAYBE CHANGE IN THE FUTURE
         else{
             type = "member";
         }

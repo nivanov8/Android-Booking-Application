@@ -78,7 +78,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long insert = db.insert(MEMBER_TABLE, null, cv);
 
-        System.out.println("Inserting with: " + id);
         Member member = new Member(id, firstname, lastname, username, password, email);
         return member;
     }
@@ -101,43 +100,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long insert = db.insert(INSTRUCTOR_TABLE, null, cv);
 
-        System.out.println("Inserting with: " + id);
         Instructor instructor = new Instructor(id, firstname, lastname, username, password, email);
         return  instructor;
     }
-
-    //method to search for member in database
-   /* public ArrayList<Member> findMembers(){
-        ArrayList<Member> memberList =  new ArrayList<Member>();
-
-        String queryString = "SELECT * FROM " + MEMBER_TABLE;
-
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = db.rawQuery(queryString, null);
-
-        if (cursor.moveToFirst()){
-            // loop through results
-            do{
-                int memberId = cursor.getInt(0);
-                String memberFirstName = cursor.getString(1);
-                String memberLastName = cursor.getString(2);
-                String memberUsername = cursor.getString(3);
-                String memberPassword = cursor.getString(4);
-                String memberEmail = cursor.getString(5);
-
-                Member member = new Member(memberId, memberFirstName, memberLastName, memberUsername, memberPassword, memberEmail);
-                memberList.add(member);
-
-            }while(cursor.moveToNext());
-        }
-        else{
-
-        }
-        cursor.close();
-        db.close();
-        return memberList;
-    }*/
 
     //add class to DB
     public Class addClass(String name, String description){
@@ -155,6 +120,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return cls;
     }
 
+    //get max id for users
     public int getMaxId(String table1,String table2, String column1, String column2){
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT MAX(" + column1 + ") FROM " + table1;
@@ -173,14 +139,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         cursor2.close();
 
-        System.out.println("id1 instructors " + maxID1);
-        System.out.println("id2 members " + maxID2);
-
-
         int maxId = Math.max(maxID1, maxID2) + 1;
-
-        System.out.println("idMax" + maxId);
-
         return maxId;
     }
 
@@ -195,11 +154,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             maxId = cursor.getInt(0);
         }
         cursor.close();
-        System.out.println(maxId + 1);
         return maxId + 1;
     }
 
-
+    // returns the found user
     public User findUser(String username, String password){
         String query = "SELECT * FROM " + MEMBER_TABLE;
 
@@ -245,6 +203,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
+    //return a list of all classes
     public ArrayList<Class> getAllClasses(){
         ArrayList<Class> list = new ArrayList<Class>();
         String query = "SELECT * FROM " + CLASS_TABLE;
@@ -260,11 +219,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 Class cls = new Class(id, name, description);
                 list.add(cls);
             }while(cursor.moveToNext());
-
         }
         return list;
     }
 
+    //delete a class
     public boolean deleteClass(int classId){
         String query = "DELETE FROM " + CLASS_TABLE + " WHERE " + CLASS_ID + " = " + classId;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -278,6 +237,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+    //delete a user
     public boolean deleteUser(int id, String type){
         String userType;
         String userId;
@@ -304,9 +265,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         else{
             return false;
         }
-
     }
 
+    //return a list of users
     public ArrayList<User> getAllUsers(){
         ArrayList<User> list = new ArrayList<User>();
         String query = "SELECT * FROM " + MEMBER_TABLE;
@@ -341,7 +302,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 String uname = cursor2.getString(3);
                 String pword = cursor2.getString(4);
                 String email = cursor2.getString(5);
-                System.out.println("Fname " + fname);
 
                 Instructor inst = new Instructor(id, fname, lname, uname, pword, email);
                 list.add(inst);
@@ -350,7 +310,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return list;
     }
 
-
+    //update a class
     public void updateClass(int id, String name, String description){
         String query = "UPDATE " + CLASS_TABLE + " SET " + CLASS_NAME + "=" + "'" + name + "'" + " WHERE " +
                 CLASS_ID + "=" + "'" + id + "'";
@@ -358,10 +318,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
-
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)} );
-
     }
-
-
 }

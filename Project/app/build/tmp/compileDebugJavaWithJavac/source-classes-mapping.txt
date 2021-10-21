@@ -1,7 +1,7 @@
 com/example/finalproject/Signup2.java
  com.example.finalproject.Signup2
-com/example/finalproject/AdminPage.java
- com.example.finalproject.AdminPage
+com/example/finalproject/ChangeClassInfo.java
+ com.example.finalproject.ChangeClassInfo
 com/example/finalproject/Admin.java
  com.example.finalproject.Admin
 com/example/finalproject/DeleteClass.java
@@ -16,21 +16,21 @@ com/example/finalproject/DataBaseHelper.java
  com.example.finalproject.DataBaseHelper
 com/example/finalproject/Login.java
  com.example.finalproject.Login
-com/example/finalproject/Class.java
- com.example.finalproject.Class
+com/example/finalproject/EditClass.java
+ com.example.finalproject.EditClass
 com/example/finalproject/Instructor.java
  com.example.finalproject.Instructor
 com/example/finalproject/BuildConfig.java
  com.example.finalproject.BuildConfig
 com/example/finalproject/DeleteUser.java
  com.example.finalproject.DeleteUser
-com/example/finalproject/CreateClass.java
- com.example.finalproject.CreateClass
+com/example/finalproject/AdminPage.java
+ com.example.finalproject.AdminPage
 com/example/finalproject/User.java
  com.example.finalproject.User
 com/example/finalproject/Member.java
  com.example.finalproject.Member
-com/example/finalproject/ChangeClassInfo.java
- com.example.finalproject.ChangeClassInfo
-com/example/finalproject/EditClass.java
- com.example.finalproject.EditClass
+com/example/finalproject/Class.java
+ com.example.finalproject.Class
+com/example/finalproject/CreateClass.java
+ com.example.finalproject.CreateClass

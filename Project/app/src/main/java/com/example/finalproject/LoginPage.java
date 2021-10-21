@@ -18,8 +18,6 @@ public class LoginPage extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-
-
         String userType = intent.getStringExtra("type").toString();
         String username = intent.getStringExtra("username").toString();
         String firstName = intent.getStringExtra("firstName").toString();
