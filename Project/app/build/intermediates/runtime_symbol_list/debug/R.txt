@@ -1940,6 +1940,10 @@ int id chip3 0x7f080071
 int id chip_group 0x7f080072
 int id chronometer 0x7f080073
 int id circle_center 0x7f080074
+int id classDescription 0x7f0801f7
+int id classDifficulty 0x7f0801f8
+int id className 0x7f0801f9
+int id classSize 0x7f0801fa
 int id clear_text 0x7f080075
 int id clip_horizontal 0x7f080076
 int id clip_vertical 0x7f080077
@@ -1956,6 +1960,8 @@ int id continuousVelocity 0x7f080081
 int id coordinator 0x7f080082
 int id cos 0x7f080083
 int id counterclockwise 0x7f080084
+int id createClass_btn 0x7f0801fb
+int id create_class 0x7f0801f6
 int id currentState 0x7f080085
 int id custom 0x7f080086
 int id customPanel 0x7f080087
@@ -2261,6 +2267,10 @@ int id textView10 0x7f0801b0
 int id textView11 0x7f0801b1
 int id textView12 0x7f0801ec
 int id textView13 0x7f0801f5
+int id textView14 0x7f0801ef
+int id textView15 0x7f0801fc
+int id textView16 0x7f0801fd
+int id textView17 0x7f0801fe
 int id textView2 0x7f0801b2
 int id textView3 0x7f0801b3
 int id textView4 0x7f0801b4
@@ -2389,6 +2399,7 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_admin_page 0x7f0b0075
+int layout activity_create_class 0x7f0b0076
 int layout activity_login 0x7f0b001c
 int layout activity_login_page 0x7f0b0074
 int layout activity_main 0x7f0b001d

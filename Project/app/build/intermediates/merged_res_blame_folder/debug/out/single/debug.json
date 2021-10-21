@@ -60,6 +60,10 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_create_class.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_create_class.xml"
+    },
+    {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },

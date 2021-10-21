@@ -2,18 +2,8 @@ com/example/finalproject/Signup2.java
  com.example.finalproject.Signup2
 com/example/finalproject/Admin.java
  com.example.finalproject.Admin
-com/example/finalproject/BuildConfig.java
- com.example.finalproject.BuildConfig
 com/example/finalproject/MainActivity.java
  com.example.finalproject.MainActivity
-com/example/finalproject/AdminPage.java
- com.example.finalproject.AdminPage
-com/example/finalproject/User.java
- com.example.finalproject.User
-com/example/finalproject/Member.java
- com.example.finalproject.Member
-com/example/finalproject/Class.java
- com.example.finalproject.Class
 com/example/finalproject/LoginPage.java
  com.example.finalproject.LoginPage
 com/example/finalproject/Signup.java
@@ -24,3 +14,15 @@ com/example/finalproject/Login.java
  com.example.finalproject.Login
 com/example/finalproject/Instructor.java
  com.example.finalproject.Instructor
+com/example/finalproject/BuildConfig.java
+ com.example.finalproject.BuildConfig
+com/example/finalproject/AdminPage.java
+ com.example.finalproject.AdminPage
+com/example/finalproject/User.java
+ com.example.finalproject.User
+com/example/finalproject/Member.java
+ com.example.finalproject.Member
+com/example/finalproject/Class.java
+ com.example.finalproject.Class
+com/example/finalproject/CreateClass.java
+ com.example.finalproject.CreateClass

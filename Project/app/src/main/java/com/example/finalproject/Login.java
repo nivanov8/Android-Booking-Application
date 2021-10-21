@@ -37,6 +37,20 @@ public class Login extends AppCompatActivity {
             startActivity(intent);
         }
 
-        // retrieve data to check if in DB already
+        else{
+            DataBaseHelper dbHelper = new DataBaseHelper(Login.this);
+            Member foundUser = dbHelper.findUserName(username, password);
+            System.out.println(foundUser);
+
+            //if (foundUser){
+                Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+
+
+
+
+                //intent2.putExtra()
+                startActivity(intent2);
+            //}
+        }
     }
 }

@@ -20,6 +20,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
+            android:name="com.example.finalproject.CreateClass"
+            android:exported="true" />
+        <activity
             android:name="com.example.finalproject.AdminPage"
             android:exported="true" />
         <activity

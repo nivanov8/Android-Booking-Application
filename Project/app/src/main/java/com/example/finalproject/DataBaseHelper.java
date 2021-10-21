@@ -28,6 +28,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String INSTRUCTOR_EMAIL = "INSTRUCTOR_EMAIL";
     public static final String INSTRUCTOR_ID = "INSTRUCTOR_ID";
 
+    public static final String CLASS_TABLE = "CLASS_TABLE";
+    public static final String CLASS_NAME = "CLASS_NAME";
+    public static final String CLASS_DESCRIPTION = "CLASS_DESCRIPTION";
+    public static final String CLASS_DIFFICULTY = "CLASS_DIFFICULTY";
+    public static final String  CLASS_SIZE = "CLASS_SIZE";
+
 
 
 
@@ -42,6 +48,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 MEMBER_EMAIL + " TEXT)";
 
         String createInstructorsTable = "CREATE TABLE " + INSTRUCTOR_TABLE + " (" + INSTRUCTOR_ID + " INTEGER PRIMARY KEY, " + INSTRUCTOR_FIRSTNAME +
+                " TEXT, " + INSTRUCTOR_LASTNAME + " TEXT, " + INSTRUCTOR_USERNAME + " TEXT, " + INSTRUCTOR_PASSWORD + " TEXT, " +
+                INSTRUCTOR_EMAIL + " TEXT)";
+
+        String createClassTable = "CREATE TABLE " + INSTRUCTOR_TABLE + " (" + INSTRUCTOR_ID + " INTEGER PRIMARY KEY, " + INSTRUCTOR_FIRSTNAME +
                 " TEXT, " + INSTRUCTOR_LASTNAME + " TEXT, " + INSTRUCTOR_USERNAME + " TEXT, " + INSTRUCTOR_PASSWORD + " TEXT, " +
                 INSTRUCTOR_EMAIL + " TEXT)";
 
@@ -132,6 +142,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return memberList;
     }
 
+    public Class addClass(String name, String description, String difficulty, int size){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(CLASS_NAME, name);
+        cv.put(CLASS_DESCRIPTION, description);
+        cv.put(CLASS_DIFFICULTY, difficulty);
+        cv.put(CLASS_SIZE, size);
+
+        long insert = db.insert(CLASS_TABLE, null, cv);
+        Class cls = new Class(name, description, difficulty, size);
+
+        return cls;
+
+    }
+
     public int getMaxId(String table1,String table2, String column1, String column2){
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT MAX(" + column1 + ") FROM " + table1;
@@ -161,4 +187,27 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return maxId;
     }
 
+
+    public Member findUserName(String username, String password){
+        String queryMembersUsername = "SELECT " + MEMBER_USERNAME +" FROM " + MEMBER_TABLE ;
+        String queryMemPasswords = "SELECT " + MEMBER_USERNAME +" FROM " + MEMBER_TABLE ;
+
+
+        //String queryInstructors = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_USERNAME + " LIKE %username%";
+
+        System.out.println(queryMembers);
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryMembers, null);
+
+
+
+        while(cursor.moveToNext()) {
+            String str = cursor.getString(0);
+            System.out.println(str);
+            if (str.equals(username)) {
+                return null;
+            }
+        }
+        return null;
+    }
 }

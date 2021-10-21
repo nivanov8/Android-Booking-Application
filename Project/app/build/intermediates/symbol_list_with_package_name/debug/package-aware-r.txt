@@ -1941,6 +1941,10 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id classDescription
+id classDifficulty
+id className
+id classSize
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1957,6 +1961,8 @@ id continuousVelocity
 id coordinator
 id cos
 id counterclockwise
+id createClass_btn
+id create_class
 id currentState
 id custom
 id customPanel
@@ -2262,6 +2268,10 @@ id textView10
 id textView11
 id textView12
 id textView13
+id textView14
+id textView15
+id textView16
+id textView17
 id textView2
 id textView3
 id textView4
@@ -2390,6 +2400,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_admin_page
+layout activity_create_class
 layout activity_login
 layout activity_login_page
 layout activity_main
