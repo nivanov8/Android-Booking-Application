@@ -351,4 +351,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public void updateClass(int id, String name, String description){
+        String query = "UPDATE " + CLASS_TABLE + " SET " + CLASS_NAME + "=" + "'" + name + "'" + " WHERE " +
+                CLASS_ID + "=" + "'" + id + "'";
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(CLASS_NAME, name);
+        cv.put(CLASS_DESCRIPTION, description);
+
+        db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)} );
+
+    }
+
+
 }

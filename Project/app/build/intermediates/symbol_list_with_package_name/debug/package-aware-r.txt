@@ -1945,6 +1945,8 @@ id classAddSuccess
 id classDescription
 id classListView
 id className
+id classNametext
+id classdescriptionText
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2003,6 +2005,8 @@ id easeInOut
 id easeOut
 id east
 id editClass
+id editTextClassDesc
+id editTextClassName
 id edit_query
 id elastic
 id email
@@ -2019,6 +2023,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id finish
+id finishChanges
 id firstname
 id fitToContents
 id fixed
@@ -2275,6 +2280,7 @@ id textView14
 id textView15
 id textView16
 id textView17
+id textView18
 id textView19
 id textView2
 id textView3
@@ -2405,6 +2411,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_admin_page
+layout activity_change_class_info
 layout activity_create_class
 layout activity_delete_class
 layout activity_delete_user

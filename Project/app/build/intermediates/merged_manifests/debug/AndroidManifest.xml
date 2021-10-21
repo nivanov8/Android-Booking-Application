@@ -20,6 +20,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
+            android:name="com.example.finalproject.ChangeClassInfo"
+            android:exported="true" />
+        <activity
             android:name="com.example.finalproject.DeleteUser"
             android:exported="true" />
         <activity

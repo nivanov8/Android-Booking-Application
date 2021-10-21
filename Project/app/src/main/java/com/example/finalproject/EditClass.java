@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -48,20 +49,25 @@ public class EditClass extends AppCompatActivity implements AdapterView.OnItemCl
 
         classLV.setOnItemClickListener(this);
 
+        //startActivity(getIntent());
+
     }
 
 
-    //IMPLEMENT EDITCLASS FOR DBHELPER
+
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         String name = adapterView.getItemAtPosition(i).toString();
-
         int id = classIds.get(i);
+        String description = classDescriptions.get(i);
 
-        DataBaseHelper dbHelper = new DataBaseHelper(EditClass.this);
-        //dbHelper.deleteClass(id);
-        Toast.makeText(this, "Class Edited", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), ChangeClassInfo.class);
+        intent.putExtra("id", id);
+        intent.putExtra("name", name);
+        intent.putExtra("description", description);
+        System.out.println("HERE");
         finish();
-        startActivity(getIntent());
+        startActivity(intent);
+
     }
 }
