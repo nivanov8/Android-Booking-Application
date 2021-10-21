@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,18 +40,38 @@ public class Login extends AppCompatActivity {
 
         else{
             DataBaseHelper dbHelper = new DataBaseHelper(Login.this);
-            boolean foundUser = dbHelper.findUserName(username);
-            System.out.println(foundUser);
+            User foundUser = dbHelper.findUser(username, password);
+            //System.out.println(foundUser.getClass().getName());
 
-            //if (foundUser){
-                Intent intent2 = new Intent(getApplicationContext(), LoginPage.class); //change signup2 LoginPage
+            if (foundUser instanceof Member){
+                Member user = (Member) foundUser;
 
+                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                String fname = user.getFirstname();
+                String uname = user.getUsername();
 
+                intent.putExtra("type", "member");
+                intent.putExtra("firstName", fname);
+                intent.putExtra("username", uname);
+                startActivity(intent);
+            }
+            else if (foundUser instanceof Instructor){
+                Instructor user = (Instructor) foundUser;
 
+                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                String fname = user.getFirstname();
+                String uname = user.getUsername();
 
-                //intent2.putExtra()
-                startActivity(intent2);
-            //}
+                intent.putExtra("type", "instructor");
+                intent.putExtra("firstName", fname);
+                intent.putExtra("username", uname);
+                startActivity(intent);
+            }
+            //found member is null meaning user is not in DB
+            else{
+                return;
+            }
+
         }
     }
 }

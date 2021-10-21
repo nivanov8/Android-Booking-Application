@@ -187,25 +187,48 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean findUserName(String username){
-        String queryMembersUsername = "SELECT " + MEMBER_USERNAME + " FROM " + MEMBER_TABLE;
-        String queryMembersPassword = "SELECT " + MEMBER_PASSWORD + " FROM " + MEMBER_TABLE;
-        //String queryInstructors = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_USERNAME + " LIKE %username%";
+    public User findUser(String username, String password){
+        String query = "SELECT * FROM " + MEMBER_TABLE;
 
-        System.out.println(queryMembersUsername);
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(queryMembersUsername, null);
-        Cursor cursor2 = db.rawQuery(queryMembersPassword, null);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
 
+        if(cursor.moveToFirst()){
+            do{
+                int id = cursor.getInt(0);
+                String fname = cursor.getString(1);
+                String lname = cursor.getString(2);
+                String uname = cursor.getString(3);
+                String pword = cursor.getString(4);
+                String email = cursor.getString(5);
 
-
-        while(cursor.moveToNext() && cursor2.moveToNext()) {
-            String uname = cursor.getString(0);
-            String pword = cursor2.getString(0);
-            if (uname.equals(username) &&) {
-                return true;
-            }
+                if (uname.equals(username) && pword.equals(password)){
+                    Member mem = new Member(id, fname, lname, uname, pword, email);
+                    return mem;
+                }
+            }while(cursor.moveToNext());
         }
-        return false;
+
+        //query instructor table if not found in user table
+        String query2 = "SELECT * FROM " + INSTRUCTOR_TABLE;
+        Cursor cursor2 = db.rawQuery(query2, null);
+
+        if (cursor2.moveToFirst()){
+            do{
+                int id = cursor2.getInt(0);
+                String fname = cursor2.getString(1);
+                String lname = cursor2.getString(2);
+                String uname = cursor2.getString(3);
+                String pword = cursor2.getString(4);
+                String email = cursor2.getString(5);
+
+                if (uname.equals(username) && pword.equals(password)){
+                    Instructor inst = new Instructor(id, fname, lname, uname, pword, email);
+                    return inst;
+                }
+
+            }while(cursor2.moveToNext());
+        }
+        return null;
     }
 }
