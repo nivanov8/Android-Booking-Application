@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".DeleteUser"
+            android:exported="true" />
+        <activity
+            android:name=".EditClass"
+            android:exported="true" />
+        <activity
+            android:name=".DeleteClass"
+            android:exported="true" />
+        <activity
             android:name=".CreateClass"
             android:exported="true" />
         <activity

@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class CreateClass extends AppCompatActivity {
 
@@ -13,7 +17,27 @@ public class CreateClass extends AppCompatActivity {
         setContentView(R.layout.activity_create_class);
     }
 
-    public void onCreateClassClick(){
-        //Intent intent = new Intent(getApplicationContext(), )
+    public void onCreateClassClick(View view) { //throws exception
+        EditText text1 = (EditText) findViewById(R.id.className);
+        EditText text2 = (EditText) findViewById(R.id.classDescription);
+        TextView text3 = (TextView) findViewById(R.id.classAddSuccess); //maybe make prompt that class has been added
+
+        String name = text1.getText().toString().trim();
+        String description = text2.getText().toString().trim();
+
+
+        //if nothing entered do nothing
+        if (name.length() == 0 || description.length() == 0 ){
+            return;
+        }
+
+        DataBaseHelper dbHelper = new DataBaseHelper(CreateClass.this);
+
+        Class cls = dbHelper.addClass(name, description);
+        Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
+
+        finish();
     }
+
+
 }

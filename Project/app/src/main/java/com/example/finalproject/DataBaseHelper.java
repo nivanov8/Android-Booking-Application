@@ -28,13 +28,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String INSTRUCTOR_EMAIL = "INSTRUCTOR_EMAIL";
     public static final String INSTRUCTOR_ID = "INSTRUCTOR_ID";
 
+    public static final String CLASS_ID = "CLASS_ID";
     public static final String CLASS_TABLE = "CLASS_TABLE";
     public static final String CLASS_NAME = "CLASS_NAME";
     public static final String CLASS_DESCRIPTION = "CLASS_DESCRIPTION";
-    public static final String CLASS_DIFFICULTY = "CLASS_DIFFICULTY";
-    public static final String  CLASS_SIZE = "CLASS_SIZE";
-
-
 
 
     public DataBaseHelper(@Nullable Context context) {
@@ -51,12 +48,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 " TEXT, " + INSTRUCTOR_LASTNAME + " TEXT, " + INSTRUCTOR_USERNAME + " TEXT, " + INSTRUCTOR_PASSWORD + " TEXT, " +
                 INSTRUCTOR_EMAIL + " TEXT)";
 
-        String createClassTable = "CREATE TABLE " + INSTRUCTOR_TABLE + " (" + INSTRUCTOR_ID + " INTEGER PRIMARY KEY, " + INSTRUCTOR_FIRSTNAME +
-                " TEXT, " + INSTRUCTOR_LASTNAME + " TEXT, " + INSTRUCTOR_USERNAME + " TEXT, " + INSTRUCTOR_PASSWORD + " TEXT, " +
-                INSTRUCTOR_EMAIL + " TEXT)";
+        String createClassTable = "CREATE TABLE " + CLASS_TABLE + " (" + CLASS_ID + " INTEGER PRIMARY KEY, " + CLASS_NAME +
+                " TEXT, " + CLASS_DESCRIPTION + " TEXT)";
 
         db.execSQL(createInstructorsTable);
         db.execSQL(createMembersTable);
+        db.execSQL(createClassTable);
     }
 
     @Override
@@ -110,7 +107,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     //method to search for member in database
-    public ArrayList<Member> findMembers(){
+   /* public ArrayList<Member> findMembers(){
         ArrayList<Member> memberList =  new ArrayList<Member>();
 
         String queryString = "SELECT * FROM " + MEMBER_TABLE;
@@ -140,19 +137,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return memberList;
-    }
+    }*/
 
-    public Class addClass(String name, String description, String difficulty, int size){
+    //add class to DB
+    public Class addClass(String name, String description){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        int id = getMaxClassId(CLASS_TABLE, CLASS_ID);
+        cv.put(CLASS_ID, id);
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
-        cv.put(CLASS_DIFFICULTY, difficulty);
-        cv.put(CLASS_SIZE, size);
 
         long insert = db.insert(CLASS_TABLE, null, cv);
-        Class cls = new Class(name, description, difficulty, size);
+        Class cls = new Class(id, name, description);
 
         return cls;
     }
@@ -184,6 +182,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         System.out.println("idMax" + maxId);
 
         return maxId;
+    }
+
+    //get maxID for class
+    public int getMaxClassId(String table, String column){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT MAX(" + column + ") FROM " + table;
+        Cursor cursor = db.rawQuery(query, null);
+
+        int maxId = 0;
+        while(cursor.moveToNext()){
+            maxId = cursor.getInt(0);
+        }
+        cursor.close();
+        System.out.println(maxId + 1);
+        return maxId + 1;
     }
 
 
@@ -231,4 +244,111 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return null;
     }
+
+    public ArrayList<Class> getAllClasses(){
+        ArrayList<Class> list = new ArrayList<Class>();
+        String query = "SELECT * FROM " + CLASS_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                int id = cursor.getInt(0);
+                String name = cursor.getString(1);
+                String description = cursor.getString(2);
+                Class cls = new Class(id, name, description);
+                list.add(cls);
+            }while(cursor.moveToNext());
+
+        }
+        return list;
+    }
+
+    public boolean deleteClass(int classId){
+        String query = "DELETE FROM " + CLASS_TABLE + " WHERE " + CLASS_ID + " = " + classId;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public boolean deleteUser(int id, String type){
+        String userType;
+        String userId;
+        if (type.equals("member")){
+            userType = MEMBER_TABLE;
+            userId = MEMBER_ID;
+        }
+        else if (type.equals("instructor")){
+            userType = INSTRUCTOR_TABLE;
+            userId = INSTRUCTOR_ID;
+        }
+        else{
+            userType = MEMBER_TABLE;
+            userId = MEMBER_ID;
+        }
+        String query = "DELETE FROM " + userType + " WHERE " + userId + " = " + id;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    public ArrayList<User> getAllUsers(){
+        ArrayList<User> list = new ArrayList<User>();
+        String query = "SELECT * FROM " + MEMBER_TABLE;
+        String query2 = "SELECT * FROM " + INSTRUCTOR_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        //fill list with members first
+        if(cursor.moveToFirst()) {
+            do {
+                int id = cursor.getInt(0);
+                String fname = cursor.getString(1);
+                String lname = cursor.getString(2);
+                String uname = cursor.getString(3);
+                String pword = cursor.getString(4);
+                String email = cursor.getString(5);
+
+                Member member = new Member(id, fname, lname, uname, pword, email);
+                list.add(member);
+            } while (cursor.moveToNext());
+        }
+
+        Cursor cursor2 = db.rawQuery(query2, null);
+
+        if(cursor2.moveToFirst()) {
+            do {
+                int id = cursor2.getInt(0);
+                String fname = cursor2.getString(1);
+                String lname = cursor2.getString(2);
+                String uname = cursor2.getString(3);
+                String pword = cursor2.getString(4);
+                String email = cursor2.getString(5);
+                System.out.println("Fname " + fname);
+
+                Instructor inst = new Instructor(id, fname, lname, uname, pword, email);
+                list.add(inst);
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+
 }

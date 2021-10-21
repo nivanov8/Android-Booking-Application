@@ -18,4 +18,19 @@ public class AdminPage extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), CreateClass.class);
         startActivity(intent);
     }
+
+    public void onDeleteClass(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteClass.class);
+        startActivity(intent);
+    }
+
+    public void onEditClass(View view){
+        Intent intent = new Intent(getApplicationContext(), EditClass.class);
+        startActivity(intent);
+    }
+
+    public void onDelUser(View view){
+        Intent intent = new Intent(getApplicationContext(), DeleteUser.class);
+        startActivity(intent);
+    }
 }

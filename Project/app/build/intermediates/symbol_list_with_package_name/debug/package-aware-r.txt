@@ -1941,10 +1941,10 @@ id chip3
 id chip_group
 id chronometer
 id circle_center
+id classAddSuccess
 id classDescription
-id classDifficulty
+id classListView
 id className
-id classSize
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1972,6 +1972,8 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delUser
+id deleteClass
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -2000,6 +2002,7 @@ id easeIn
 id easeInOut
 id easeOut
 id east
+id editClass
 id edit_query
 id elastic
 id email
@@ -2272,6 +2275,7 @@ id textView14
 id textView15
 id textView16
 id textView17
+id textView19
 id textView2
 id textView3
 id textView4
@@ -2312,6 +2316,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userList
 id user_login
 id user_signup
 id username
@@ -2401,6 +2406,9 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_admin_page
 layout activity_create_class
+layout activity_delete_class
+layout activity_delete_user
+layout activity_edit_class
 layout activity_login
 layout activity_login_page
 layout activity_main

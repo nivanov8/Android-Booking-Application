@@ -3,14 +3,13 @@ package com.example.finalproject;
 public class Class {
     private String name;
     private String description;
-    private String difficulty;
-    private int size;
+    private int id;
 
-    public Class (String name, String description, String difficulty, int size){
+    public Class (int id, String name, String description){
         this.name = name;
         this.description = description;
-        this.difficulty = difficulty;
-        this.size = size;
+        this.id = id;
+
     }
 
     public String getName(){
@@ -21,12 +20,6 @@ public class Class {
         return description;
     }
 
-    public String getDifficulty(){
-        return difficulty;
-    }
-
-    public int size(){
-        return size;
-    }
+    public int getId(){return id;}
 
 }
