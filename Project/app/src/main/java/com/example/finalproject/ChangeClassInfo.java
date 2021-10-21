@@ -23,23 +23,25 @@ public class ChangeClassInfo extends AppCompatActivity {
         String currectClassName = intent.getStringExtra("name").toString();
         String currentClassDesc = intent.getStringExtra("description").toString();
 
-
         name.append(currectClassName);
         desc.append(currentClassDesc);
     }
 
+    //update the class
     public void onFinishChanges(View view){
         Intent intent = getIntent();
         int classId = intent.getIntExtra("id", 0);
-        System.out.println("ID " + classId);
 
         EditText text1 = (EditText) findViewById(R.id.editTextClassName);
         EditText text2 = (EditText) findViewById(R.id.editTextClassDesc);
 
         String newName = text1.getText().toString().trim();
         String newDesc = text2.getText().toString().trim();
-        System.out.println("passedName " + newName);
-        System.out.println("passedDesc " + newDesc);
+
+        //if nothing is entered do nothing
+        if (newName.length() == 0 || newDesc.length() == 0){
+            return;
+        }
 
         DataBaseHelper dbHelper = new DataBaseHelper(ChangeClassInfo.this);
         dbHelper.updateClass(classId, newName, newDesc);
@@ -47,6 +49,5 @@ public class ChangeClassInfo extends AppCompatActivity {
         Intent intent2 = new Intent(getApplicationContext(), EditClass.class);
         finish();
         startActivity(intent2);
-
     }
 }
