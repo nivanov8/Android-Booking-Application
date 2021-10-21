@@ -1,0 +1,111 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.finalproject"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:5:5-51:19
+12        android:allowBackup="true"
+12-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:6:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.5.0] C:\Users\amera\.gradle\caches\transforms-3\255d63c0f9f8f5d12ab3191ffb377750\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:extractNativeLibs="false"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:7:9-43
+17        android:label="@string/app_name"
+17-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:8:9-41
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:9:9-54
+19        android:supportsRtl="true"
+19-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:10:9-35
+20        android:testOnly="true"
+21        android:theme="@style/Theme.FinalProject" >
+21-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:11:9-50
+22        <activity
+22-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:12:9-14:39
+23            android:name="com.example.finalproject.ChangeClassInfo"
+23-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:13:13-44
+24            android:exported="true" />
+24-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:14:13-36
+25        <activity
+25-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:15:9-17:39
+26            android:name="com.example.finalproject.DeleteUser"
+26-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:16:13-39
+27            android:exported="true" />
+27-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:17:13-36
+28        <activity
+28-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:18:9-20:39
+29            android:name="com.example.finalproject.EditClass"
+29-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:19:13-38
+30            android:exported="true" />
+30-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:20:13-36
+31        <activity
+31-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:21:9-23:39
+32            android:name="com.example.finalproject.DeleteClass"
+32-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:22:13-40
+33            android:exported="true" />
+33-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:23:13-36
+34        <activity
+34-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:24:9-26:39
+35            android:name="com.example.finalproject.CreateClass"
+35-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:25:13-40
+36            android:exported="true" />
+36-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:26:13-36
+37        <activity
+37-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:27:9-29:39
+38            android:name="com.example.finalproject.AdminPage"
+38-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:28:13-38
+39            android:exported="true" />
+39-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:29:13-36
+40        <activity
+40-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:30:9-32:39
+41            android:name="com.example.finalproject.LoginPage"
+41-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:31:13-38
+42            android:exported="true" />
+42-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:32:13-36
+43        <activity
+43-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:33:9-35:39
+44            android:name="com.example.finalproject.Signup"
+44-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:34:13-35
+45            android:exported="true" />
+45-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:35:13-36
+46        <activity
+46-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:36:9-38:39
+47            android:name="com.example.finalproject.Signup2"
+47-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:37:13-36
+48            android:exported="true" />
+48-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:38:13-36
+49        <activity
+49-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:39:9-41:39
+50            android:name="com.example.finalproject.Login"
+50-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:40:13-34
+51            android:exported="true" />
+51-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:41:13-36
+52        <activity
+52-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:42:9-50:20
+53            android:name="com.example.finalproject.MainActivity"
+53-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:43:13-41
+54            android:exported="true" >
+54-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:44:13-36
+55            <intent-filter>
+55-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:45:13-49:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:46:17-69
+56-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:46:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:48:17-77
+58-->C:\Users\amera\Desktop\Project\Project\Project\app\src\main\AndroidManifest.xml:48:27-74
+59            </intent-filter>
+60        </activity>
+61    </application>
+62
+63</manifest>
