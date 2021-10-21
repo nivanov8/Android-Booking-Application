@@ -48,9 +48,9 @@ public class Signup2 extends AppCompatActivity {
 
         //make appropriate class and add to database
         if(type.equals("Member")){
-            Member member = new Member(firstname, lastname, username, password, email);
-            db.addMember(member);
+            Member member = db.addMember(firstname, lastname, username, password, email);
 
+            System.out.println(member.getId());
             Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
 
             //get username and firstname to pass to other view
@@ -65,9 +65,9 @@ public class Signup2 extends AppCompatActivity {
 
         }
         else if (type.equals("Instructor")){
-            Instructor instructor = new Instructor(firstname, lastname, username, password, email);
-            db.addInstructor(instructor);
+            Instructor instructor = db.addInstructor(firstname, lastname, username, password, email);
 
+            System.out.println(instructor.getId());
             Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
 
             //get username and firstname to pass to other view
@@ -80,7 +80,7 @@ public class Signup2 extends AppCompatActivity {
 
             startActivity(intent2);
         }
-
-
     }
+
+
 }

@@ -2261,6 +2261,7 @@ id textView
 id textView10
 id textView11
 id textView12
+id textView13
 id textView2
 id textView3
 id textView4
@@ -2388,6 +2389,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_admin_page
 layout activity_login
 layout activity_login_page
 layout activity_main

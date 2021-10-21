@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".AdminPage"
+            android:exported="true" />
+        <activity
             android:name=".LoginPage"
             android:exported="true" />
         <activity

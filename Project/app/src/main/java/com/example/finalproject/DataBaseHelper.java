@@ -2,10 +2,13 @@ package com.example.finalproject;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     //constants
@@ -52,49 +55,110 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     //method to add Member object to database
-    public boolean addMember(Member member){
+    public Member addMember(String firstname, String lastname, String username, String password, String email){
         // retrieve the database and create values to put into the database
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        int id = getMaxId(INSTRUCTOR_TABLE, MEMBER_TABLE, INSTRUCTOR_ID, MEMBER_ID);
         //add attributes to values
-        cv.put(MEMBER_ID, member.getId());
-        cv.put(MEMBER_FIRSTNAME, member.getFirstname());
-        cv.put(MEMBER_LASTNAME, member.getLastname());
-        cv.put(MEMBER_USERNAME, member.getUsername());
-        cv.put(MEMBER_PASSWORD, member.getPassword());
-        cv.put(MEMBER_EMAIL, member.getEmail());
+        cv.put(MEMBER_ID, id);
+        cv.put(MEMBER_FIRSTNAME, firstname);
+        cv.put(MEMBER_LASTNAME, lastname);
+        cv.put(MEMBER_USERNAME, username);
+        cv.put(MEMBER_PASSWORD, password);
+        cv.put(MEMBER_EMAIL, email);
 
         long insert = db.insert(MEMBER_TABLE, null, cv);
 
-        if(insert == -1){
-            return false;
-        }
-        else{
-            return true;
-        }
+        System.out.println("Inserting with: " + id);
+        Member member = new Member(id, firstname, lastname, username, password, email);
+        return member;
     }
 
-    public boolean addInstructor(Instructor instructor){
+    //method to add instructor to database
+    public Instructor addInstructor(String firstname, String lastname, String username, String password, String email){
         // retrieve the database and create values to put into the database
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        int id = getMaxId(INSTRUCTOR_TABLE, MEMBER_TABLE, INSTRUCTOR_ID, MEMBER_ID);
+
         //add attributes to values
-        cv.put(INSTRUCTOR_ID, instructor.getId());
-        cv.put(INSTRUCTOR_FIRSTNAME, instructor.getFirstname());
-        cv.put(INSTRUCTOR_LASTNAME, instructor.getLastname());
-        cv.put(INSTRUCTOR_USERNAME, instructor.getUsername());
-        cv.put(INSTRUCTOR_PASSWORD, instructor.getPassword());
-        cv.put(INSTRUCTOR_EMAIL, instructor.getEmail());
+        cv.put(INSTRUCTOR_ID, id);
+        cv.put(INSTRUCTOR_FIRSTNAME, firstname);
+        cv.put(INSTRUCTOR_LASTNAME, lastname);
+        cv.put(INSTRUCTOR_USERNAME, username);
+        cv.put(INSTRUCTOR_PASSWORD, password);
+        cv.put(INSTRUCTOR_EMAIL, email);
 
         long insert = db.insert(INSTRUCTOR_TABLE, null, cv);
 
-        if(insert == -1){
-            return false;
+        System.out.println("Inserting with: " + id);
+        Instructor instructor = new Instructor(id, firstname, lastname, username, password, email);
+        return  instructor;
+    }
+
+    //method to search for member in database
+    public ArrayList<Member> findMembers(){
+        ArrayList<Member> memberList =  new ArrayList<Member>();
+
+        String queryString = "SELECT * FROM " + MEMBER_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if (cursor.moveToFirst()){
+            // loop through results
+            do{
+                int memberId = cursor.getInt(0);
+                String memberFirstName = cursor.getString(1);
+                String memberLastName = cursor.getString(2);
+                String memberUsername = cursor.getString(3);
+                String memberPassword = cursor.getString(4);
+                String memberEmail = cursor.getString(5);
+
+                Member member = new Member(memberId, memberFirstName, memberLastName, memberUsername, memberPassword, memberEmail);
+                memberList.add(member);
+
+            }while(cursor.moveToNext());
         }
         else{
-            return true;
+
         }
+        cursor.close();
+        db.close();
+        return memberList;
     }
+
+    public int getMaxId(String table1,String table2, String column1, String column2){
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT MAX(" + column1 + ") FROM " + table1;
+        String query2 = "SELECT MAX(" + column2 + ") FROM " + table2;
+        Cursor cursor = db.rawQuery(query, null);
+        int maxID1 = 0;
+        while(cursor.moveToNext()) {
+             maxID1 = cursor.getInt(0);
+        }
+        cursor.close();
+
+        Cursor cursor2 = db.rawQuery(query2, null);
+        int maxID2 = 0;
+        while(cursor2.moveToNext()) {
+            maxID2 = cursor2.getInt(0);
+        }
+        cursor2.close();
+
+        System.out.println("id1 instructors " + maxID1);
+        System.out.println("id2 members " + maxID2);
+
+
+        int maxId = Math.max(maxID1, maxID2) + 1;
+
+        System.out.println("idMax" + maxId);
+
+        return maxId;
+    }
+
 }

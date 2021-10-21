@@ -2260,6 +2260,7 @@ int id textView 0x7f0801af
 int id textView10 0x7f0801b0
 int id textView11 0x7f0801b1
 int id textView12 0x7f0801ec
+int id textView13 0x7f0801f5
 int id textView2 0x7f0801b2
 int id textView3 0x7f0801b3
 int id textView4 0x7f0801b4
@@ -2387,6 +2388,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_admin_page 0x7f0b0075
 int layout activity_login 0x7f0b001c
 int layout activity_login_page 0x7f0b0074
 int layout activity_main 0x7f0b001d
