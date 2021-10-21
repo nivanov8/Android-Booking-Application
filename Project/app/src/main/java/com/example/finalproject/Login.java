@@ -39,11 +39,11 @@ public class Login extends AppCompatActivity {
 
         else{
             DataBaseHelper dbHelper = new DataBaseHelper(Login.this);
-            Member foundUser = dbHelper.findUserName(username, password);
+            boolean foundUser = dbHelper.findUserName(username);
             System.out.println(foundUser);
 
             //if (foundUser){
-                Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+                Intent intent2 = new Intent(getApplicationContext(), Signup2.class); //change signup2 LoginPage
 
 
 

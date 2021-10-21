@@ -188,11 +188,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
 
-    public Member findUserName(String username, String password){
-        String queryMembersUsername = "SELECT " + MEMBER_USERNAME +" FROM " + MEMBER_TABLE ;
-        String queryMemPasswords = "SELECT " + MEMBER_USERNAME +" FROM " + MEMBER_TABLE ;
-
-
+    public boolean findUserName(String username){
+        String queryMembers = "SELECT " + MEMBER_USERNAME + " FROM " + MEMBER_TABLE + " WHERE ";
         //String queryInstructors = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_USERNAME + " LIKE %username%";
 
         System.out.println(queryMembers);
@@ -202,12 +199,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
         while(cursor.moveToNext()) {
-            String str = cursor.getString(0);
-            System.out.println(str);
-            if (str.equals(username)) {
-                return null;
+            String uname = cursor.getString(0);
+            if (uname.equals(username)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
 }
