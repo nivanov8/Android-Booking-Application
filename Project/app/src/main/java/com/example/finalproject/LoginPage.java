@@ -28,7 +28,6 @@ public class LoginPage extends AppCompatActivity {
         TextView text2 = (TextView) findViewById(R.id.uname);
         TextView text3 = (TextView) findViewById(R.id.fname);
 
-
         text1.setText(userType);
         text2.setText(username);
         text3.setText(firstName);

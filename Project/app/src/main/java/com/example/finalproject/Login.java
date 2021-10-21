@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
             System.out.println(foundUser);
 
             //if (foundUser){
-                Intent intent2 = new Intent(getApplicationContext(), Signup2.class); //change signup2 LoginPage
+                Intent intent2 = new Intent(getApplicationContext(), LoginPage.class); //change signup2 LoginPage
 
 
 

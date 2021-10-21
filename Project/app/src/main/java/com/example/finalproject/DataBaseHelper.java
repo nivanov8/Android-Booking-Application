@@ -155,7 +155,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Class cls = new Class(name, description, difficulty, size);
 
         return cls;
-
     }
 
     public int getMaxId(String table1,String table2, String column1, String column2){
@@ -189,18 +188,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     public boolean findUserName(String username){
-        String queryMembers = "SELECT " + MEMBER_USERNAME + " FROM " + MEMBER_TABLE + " WHERE ";
+        String queryMembersUsername = "SELECT " + MEMBER_USERNAME + " FROM " + MEMBER_TABLE;
+        String queryMembersPassword = "SELECT " + MEMBER_PASSWORD + " FROM " + MEMBER_TABLE;
         //String queryInstructors = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_USERNAME + " LIKE %username%";
 
-        System.out.println(queryMembers);
+        System.out.println(queryMembersUsername);
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery(queryMembers, null);
+        Cursor cursor = db.rawQuery(queryMembersUsername, null);
+        Cursor cursor2 = db.rawQuery(queryMembersPassword, null);
 
 
 
-        while(cursor.moveToNext()) {
+        while(cursor.moveToNext() && cursor2.moveToNext()) {
             String uname = cursor.getString(0);
-            if (uname.equals(username)) {
+            String pword = cursor2.getString(0);
+            if (uname.equals(username) &&) {
                 return true;
             }
         }
