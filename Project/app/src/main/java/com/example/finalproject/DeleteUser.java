@@ -25,7 +25,7 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_user);
+        setContentView(R.layout.delete_user);
 
         //create list view and arrays of information
         userLV = findViewById(R.id.userList);

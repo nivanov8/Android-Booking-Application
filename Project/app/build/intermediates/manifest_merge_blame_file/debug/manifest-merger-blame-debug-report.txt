@@ -11,7 +11,7 @@
 9-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:5:5-51:19
+11-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:5:5-63:19
 12        android:allowBackup="true"
 12-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -31,81 +31,105 @@
 21-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:11:9-50
 22        <activity
 22-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:12:9-14:39
-23            android:name="com.example.finalproject.ChangeClassInfo"
-23-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:13:13-44
+23            android:name="com.example.finalproject.Instructor_EditClass"
+23-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:13:13-49
 24            android:exported="true" />
 24-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:14:13-36
 25        <activity
 25-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:15:9-17:39
-26            android:name="com.example.finalproject.DeleteUser"
-26-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:16:13-39
+26            android:name="com.example.finalproject.Instructor_ScheduleClass"
+26-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:16:13-53
 27            android:exported="true" />
 27-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:17:13-36
 28        <activity
 28-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:18:9-20:39
-29            android:name="com.example.finalproject.EditClass"
-29-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:19:13-38
+29            android:name="com.example.finalproject.Instructor_ViewAllClasses"
+29-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:19:13-54
 30            android:exported="true" />
 30-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:20:13-36
 31        <activity
 31-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:21:9-23:39
-32            android:name="com.example.finalproject.DeleteClass"
-32-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-40
+32            android:name="com.example.finalproject.InstructorLoginPage"
+32-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-48
 33            android:exported="true" />
 33-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:23:13-36
 34        <activity
 34-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:24:9-26:39
-35            android:name="com.example.finalproject.CreateClass"
-35-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:25:13-40
+35            android:name="com.example.finalproject.ChangeClassInfo"
+35-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:25:13-44
 36            android:exported="true" />
 36-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:26:13-36
 37        <activity
 37-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:27:9-29:39
-38            android:name="com.example.finalproject.AdminPage"
-38-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:28:13-38
+38            android:name="com.example.finalproject.DeleteUser"
+38-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:28:13-39
 39            android:exported="true" />
 39-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:29:13-36
 40        <activity
 40-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:30:9-32:39
-41            android:name="com.example.finalproject.LoginPage"
+41            android:name="com.example.finalproject.EditClass"
 41-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:31:13-38
 42            android:exported="true" />
 42-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:32:13-36
 43        <activity
 43-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:33:9-35:39
-44            android:name="com.example.finalproject.Signup"
-44-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:34:13-35
+44            android:name="com.example.finalproject.DeleteClass"
+44-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:34:13-40
 45            android:exported="true" />
 45-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:35:13-36
 46        <activity
 46-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:36:9-38:39
-47            android:name="com.example.finalproject.Signup2"
-47-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:37:13-36
+47            android:name="com.example.finalproject.CreateClass"
+47-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:37:13-40
 48            android:exported="true" />
 48-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:38:13-36
 49        <activity
 49-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:39:9-41:39
-50            android:name="com.example.finalproject.Login"
-50-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:40:13-34
+50            android:name="com.example.finalproject.AdminPage"
+50-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:40:13-38
 51            android:exported="true" />
 51-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:41:13-36
 52        <activity
-52-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:42:9-50:20
-53            android:name="com.example.finalproject.MainActivity"
-53-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:43:13-41
-54            android:exported="true" >
+52-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:42:9-44:39
+53            android:name="com.example.finalproject.LoginPage"
+53-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:43:13-38
+54            android:exported="true" />
 54-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:44:13-36
-55            <intent-filter>
-55-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:45:13-49:29
-56                <action android:name="android.intent.action.MAIN" />
-56-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:46:17-69
-56-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:46:25-66
-57
-58                <category android:name="android.intent.category.LAUNCHER" />
-58-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:48:17-77
-58-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:48:27-74
-59            </intent-filter>
-60        </activity>
-61    </application>
-62
-63</manifest>
+55        <activity
+55-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:45:9-47:39
+56            android:name="com.example.finalproject.Signup"
+56-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:46:13-35
+57            android:exported="true" />
+57-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:47:13-36
+58        <activity
+58-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:48:9-50:39
+59            android:name="com.example.finalproject.Signup2"
+59-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:49:13-36
+60            android:exported="true" />
+60-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:50:13-36
+61        <activity
+61-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:51:9-53:39
+62            android:name="com.example.finalproject.Login"
+62-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:52:13-34
+63            android:exported="true" />
+63-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:53:13-36
+64        <activity
+64-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:54:9-62:20
+65            android:name="com.example.finalproject.MainActivity"
+65-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:55:13-41
+66            android:exported="true" >
+66-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:56:13-36
+67            <intent-filter>
+67-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:57:13-61:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:58:17-69
+68-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:58:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:60:17-77
+70-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:60:27-74
+71            </intent-filter>
+72        </activity>
+73    </application>
+74
+75</manifest>

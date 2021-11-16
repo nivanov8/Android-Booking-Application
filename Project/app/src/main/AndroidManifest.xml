@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".Instructor_EditClass"
+            android:exported="true" />
+        <activity
+            android:name=".Instructor_ScheduleClass"
+            android:exported="true" />
+        <activity
+            android:name=".Instructor_ViewAllClasses"
+            android:exported="true" />
+        <activity
+            android:name=".InstructorLoginPage"
+            android:exported="true" />
+        <activity
             android:name=".ChangeClassInfo"
             android:exported="true" />
         <activity

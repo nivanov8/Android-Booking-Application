@@ -14,7 +14,7 @@ public class ChangeClassInfo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_class_info);
+        setContentView(R.layout.change_class_info);
 
         TextView name = (TextView) findViewById(R.id.classNametext);
         TextView desc = (TextView) findViewById(R.id.classdescriptionText);

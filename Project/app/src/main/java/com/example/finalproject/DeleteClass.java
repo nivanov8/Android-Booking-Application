@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class DeleteClass extends AppCompatActivity implements AdapterView.OnItem
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_class);
+        setContentView(R.layout.delete_class);
 
         //create list view and arrays of information
         classLV = findViewById(R.id.classListView);
@@ -37,7 +36,6 @@ public class DeleteClass extends AppCompatActivity implements AdapterView.OnItem
 
         //populate arrays with information
         int size = classes.size();
-        System.out.println(size);
         for (int i = 0; i < size; i++){
             classNames.add(classes.get(i).getName());
             classDescriptions.add(classes.get(i).getDescription());

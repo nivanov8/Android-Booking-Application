@@ -1946,6 +1946,7 @@ int id classListView 0x7f080077
 int id className 0x7f080078
 int id classNametext 0x7f080079
 int id classdescriptionText 0x7f08007a
+int id classes 0x7f08020e
 int id clear_text 0x7f08007b
 int id clip_horizontal 0x7f08007c
 int id clip_vertical 0x7f08007d
@@ -2006,6 +2007,7 @@ int id east 0x7f0800b3
 int id editClass 0x7f0800b4
 int id editTextClassDesc 0x7f0800b5
 int id editTextClassName 0x7f0800b6
+int id edit_classes 0x7f08020b
 int id edit_query 0x7f0800b7
 int id elastic 0x7f0800b8
 int id email 0x7f0800b9
@@ -2057,6 +2059,7 @@ int id immediateStop 0x7f0800e6
 int id included 0x7f0800e7
 int id info 0x7f0800e8
 int id instructor 0x7f0800e9
+int id instructor_name 0x7f080208
 int id invisible 0x7f0800ea
 int id inward 0x7f0800eb
 int id italic 0x7f0800ec
@@ -2186,6 +2189,7 @@ int id save_non_transition_alpha 0x7f080167
 int id save_overlay_view 0x7f080168
 int id sawtooth 0x7f080169
 int id scale 0x7f08016a
+int id schedule_class 0x7f08020c
 int id screen 0x7f08016b
 int id scroll 0x7f08016c
 int id scrollIndicatorDown 0x7f08016d
@@ -2283,6 +2287,7 @@ int id textView18 0x7f0801c8
 int id textView19 0x7f0801c9
 int id textView2 0x7f0801ca
 int id textView20 0x7f0801cb
+int id textView23 0x7f08020a
 int id textView3 0x7f0801cc
 int id textView4 0x7f0801cd
 int id textView5 0x7f0801ce
@@ -2327,6 +2332,7 @@ int id user_login 0x7f0801f4
 int id user_signup 0x7f0801f5
 int id username 0x7f0801f6
 int id vertical_only 0x7f0801f7
+int id view_all_classes 0x7f08020d
 int id view_offset_helper 0x7f0801f8
 int id view_transition 0x7f0801f9
 int id view_tree_lifecycle_owner 0x7f0801fa
@@ -2410,18 +2416,12 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
-int layout activity_admin_page 0x7f0b001c
-int layout activity_change_class_info 0x7f0b001d
-int layout activity_create_class 0x7f0b001e
-int layout activity_delete_class 0x7f0b001f
-int layout activity_delete_user 0x7f0b0020
-int layout activity_edit_class 0x7f0b0021
-int layout activity_login 0x7f0b0022
-int layout activity_login_page 0x7f0b0023
-int layout activity_main 0x7f0b0024
-int layout activity_signup 0x7f0b0025
-int layout activity_signup2 0x7f0b0026
+int layout admin_page 0x7f0b007c
+int layout change_class_info 0x7f0b007d
+int layout create_class 0x7f0b007e
 int layout custom_dialog 0x7f0b0027
+int layout delete_class 0x7f0b007f
+int layout delete_user 0x7f0b0080
 int layout design_bottom_navigation_item 0x7f0b0028
 int layout design_bottom_sheet_dialog 0x7f0b0029
 int layout design_layout_snackbar 0x7f0b002a
@@ -2437,6 +2437,14 @@ int layout design_navigation_menu 0x7f0b0033
 int layout design_navigation_menu_item 0x7f0b0034
 int layout design_text_input_end_icon 0x7f0b0035
 int layout design_text_input_start_icon 0x7f0b0036
+int layout edit_class 0x7f0b0081
+int layout instructor_edit_class 0x7f0b0089
+int layout instructor_login_page 0x7f0b008b
+int layout instructor_schedule_class 0x7f0b008a
+int layout instructor_view_all_classes 0x7f0b0083
+int layout login 0x7f0b0084
+int layout login_page 0x7f0b0085
+int layout main 0x7f0b0086
 int layout material_chip_input_combo 0x7f0b0037
 int layout material_clock_display 0x7f0b0038
 int layout material_clock_display_divider 0x7f0b0039
@@ -2489,6 +2497,8 @@ int layout notification_template_part_time 0x7f0b0067
 int layout select_dialog_item_material 0x7f0b0068
 int layout select_dialog_multichoice_material 0x7f0b0069
 int layout select_dialog_singlechoice_material 0x7f0b006a
+int layout signup 0x7f0b0087
+int layout signup2 0x7f0b0088
 int layout support_simple_spinner_dropdown_item 0x7f0b006b
 int layout test_action_chip 0x7f0b006c
 int layout test_chip_zero_corner_radius 0x7f0b006d

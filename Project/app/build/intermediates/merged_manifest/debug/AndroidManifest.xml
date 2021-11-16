@@ -20,6 +20,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
+            android:name="com.example.finalproject.Instructor_EditClass"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.Instructor_ScheduleClass"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.Instructor_ViewAllClasses"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.InstructorLoginPage"
+            android:exported="true" />
+        <activity
             android:name="com.example.finalproject.ChangeClassInfo"
             android:exported="true" />
         <activity

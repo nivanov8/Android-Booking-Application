@@ -1947,6 +1947,7 @@ id classListView
 id className
 id classNametext
 id classdescriptionText
+id classes
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2007,6 +2008,7 @@ id east
 id editClass
 id editTextClassDesc
 id editTextClassName
+id edit_classes
 id edit_query
 id elastic
 id email
@@ -2058,6 +2060,7 @@ id immediateStop
 id included
 id info
 id instructor
+id instructor_name
 id invisible
 id inward
 id italic
@@ -2187,6 +2190,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id schedule_class
 id screen
 id scroll
 id scrollIndicatorDown
@@ -2284,6 +2288,7 @@ id textView18
 id textView19
 id textView2
 id textView20
+id textView23
 id textView3
 id textView4
 id textView5
@@ -2328,6 +2333,7 @@ id user_login
 id user_signup
 id username
 id vertical_only
+id view_all_classes
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -2411,18 +2417,12 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_admin_page
-layout activity_change_class_info
-layout activity_create_class
-layout activity_delete_class
-layout activity_delete_user
-layout activity_edit_class
-layout activity_login
-layout activity_login_page
-layout activity_main
-layout activity_signup
-layout activity_signup2
+layout admin_page
+layout change_class_info
+layout create_class
 layout custom_dialog
+layout delete_class
+layout delete_user
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2438,6 +2438,14 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout edit_class
+layout instructor_edit_class
+layout instructor_login_page
+layout instructor_schedule_class
+layout instructor_view_all_classes
+layout login
+layout login_page
+layout main
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2490,6 +2498,8 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout signup
+layout signup2
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius

@@ -2,7 +2,6 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +16,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
     }
 
     public void onLogin(View view){
@@ -58,13 +57,16 @@ public class Login extends AppCompatActivity {
             else if (foundUser instanceof Instructor){
                 Instructor user = (Instructor) foundUser;
 
-                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                Intent intent = new Intent(getApplicationContext(), InstructorLoginPage.class);
                 String fname = user.getFirstname();
                 String uname = user.getUsername();
 
                 intent.putExtra("type", "instructor");
                 intent.putExtra("firstName", fname);
                 intent.putExtra("username", uname);
+                System.out.println(fname);
+                System.out.println(uname);
+
                 startActivity(intent);
             }
             //found member is null meaning user is not in DB
