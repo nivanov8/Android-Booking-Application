@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Signup2 extends AppCompatActivity {
 
@@ -40,6 +41,7 @@ public class Signup2 extends AppCompatActivity {
         //if no entry then dont go ahead
         if (firstname.length()==0 || lastname.length()==0 || username.length()==0
                 || password.length()==0 || email.length()==0){
+            Toast.makeText(this, "One or More Fields are Empty", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -48,11 +50,34 @@ public class Signup2 extends AppCompatActivity {
 
         //make appropriate class and add to database
         if(type.equals("Member")){
-            Member member = new Member(firstname, lastname, username, password, email);
-            db.addMember(member);
+            Member member = db.addMember(firstname, lastname, username, password, email);
+
+            Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+
+            //get username and firstname to pass to other view
+            String uname = member.getUsername();
+            String fname = member.getFirstname();
+
+            intent2.putExtra("type", "member");
+            intent2.putExtra("firstName", fname);
+            intent2.putExtra("username", uname);
+
+            startActivity(intent2);
         }
         else if (type.equals("Instructor")){
-            Instructor instructor = new Instructor(firstname, lastname, username, password, email);
+            Instructor instructor = db.addInstructor(firstname, lastname, username, password, email);
+
+            Intent intent2 = new Intent(getApplicationContext(), LoginPage.class);
+
+            //get username and firstname to pass to other view
+            String uname = instructor.getUsername();
+            String fname = instructor.getFirstname();
+
+            intent2.putExtra("type", "instructor");
+            intent2.putExtra("firstName", fname);
+            intent2.putExtra("username", uname);
+
+            startActivity(intent2);
         }
     }
 }

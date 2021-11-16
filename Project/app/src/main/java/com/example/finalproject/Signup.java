@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
 
@@ -24,10 +25,12 @@ public class Signup extends AppCompatActivity {
 
         //if both are checked
         if (member.isChecked() && instructor.isChecked()){
+            Toast.makeText(this, "Check One", Toast.LENGTH_SHORT).show();
             return;  //do nothing
         }
         //none are checked
         else if (!member.isChecked() && !instructor.isChecked()){
+            Toast.makeText(this, "Check One", Toast.LENGTH_SHORT).show();
             return;  //do nothing
         }
         //if we get here it means only 1 is checked
@@ -42,7 +45,6 @@ public class Signup extends AppCompatActivity {
                 String type = instructor.getText().toString();
                 intent.putExtra("type", type);
             }
-
             startActivity(intent);
         }
     }

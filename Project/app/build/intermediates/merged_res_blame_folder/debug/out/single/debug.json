@@ -12,8 +12,12 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_admin_page.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_admin_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_edit_class.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_edit_class.xml"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -22,6 +26,50 @@
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login_page.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_login_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_delete_user.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_delete_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_change_class_info.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_change_class_info.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_signup.xml.flat",
@@ -36,39 +84,19 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_delete_class.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_delete_class.xml"
+    },
+    {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_create_class.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\activity_create_class.xml"
     }
 ]

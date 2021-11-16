@@ -1,21 +1,26 @@
 
 package com.example.finalproject;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+
 public abstract class User {
     protected String firstname;
     protected String lastname;
     protected String username;
     protected String password;
     protected String email;
-    protected static int id;
+    protected int userId;
 
-    public User(String firstname, String lastname, String username, String password, String email){
+    public User(int userId, String firstname, String lastname, String username, String password, String email){
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
         this.email = email;
-        id++;
+        this.userId = userId;
     }
 
     //getters and setters
@@ -39,5 +44,5 @@ public abstract class User {
         return email;
     }
 
-    public int getId() {return id;}
+    public int getId() {return userId;}
 }
