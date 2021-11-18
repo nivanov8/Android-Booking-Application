@@ -29,7 +29,7 @@
             android:name="com.example.finalproject.Instructor_ScheduleClassList"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Instructor_ViewAllClasses"
+            android:name="com.example.finalproject.Instructor_ViewMyClasses"
             android:exported="true" />
         <activity
             android:name="com.example.finalproject.InstructorLoginPage"

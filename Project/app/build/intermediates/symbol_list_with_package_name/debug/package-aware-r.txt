@@ -2342,7 +2342,7 @@ id user_login
 id user_signup
 id username
 id vertical_only
-id view_all_classes
+id view_my_classes
 id view_offset_helper
 id view_transition
 id view_tree_lifecycle_owner
@@ -2452,7 +2452,7 @@ layout instructor_edit_class
 layout instructor_login_page
 layout instructor_schedule_class
 layout instructor_schedule_class_list
-layout instructor_view_all_classes
+layout instructor_view_my_classes
 layout login
 layout login_page
 layout main

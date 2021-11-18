@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
                 String uname = user.getUsername();
 
                 intent.putExtra("type", "member");
-                intent.putExtra("firstName", fname);
+                intent.putExtra("firstname", fname);
                 intent.putExtra("username", uname);
                 startActivity(intent);
             }
@@ -63,9 +63,9 @@ public class Login extends AppCompatActivity {
                 int id = user.getId();
 
                 intent.putExtra("type", "instructor");
-                intent.putExtra("firstName", fname);
+                intent.putExtra("firstname", fname);
                 intent.putExtra("username", uname);
-                intent.putExtra("id", id);
+                intent.putExtra("instructorId", id);
 
                 startActivity(intent);
             }

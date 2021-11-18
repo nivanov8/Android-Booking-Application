@@ -20,6 +20,10 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
 
     private int instructorID;
     private int classId;
+    private String type;
+    private String firstname;
+    private String username;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,9 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         Intent intent = getIntent();
         instructorID = intent.getIntExtra("instructorId", -1);
         classId = intent.getIntExtra("classId", -1);
+        type = intent.getStringExtra("type").toString();
+        firstname = intent.getStringExtra("firstname").toString();
+        username = intent.getStringExtra("username").toString();
 
         popSpinner1();
         popSpinner2();
@@ -69,7 +76,14 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         dbHelper.addTeacher(instructorID, classId);
 
         Toast.makeText(this, "Class added to schedule", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(getApplicationContext(), InstructorLoginPage.class);
+        intent.putExtra("type", "instructor");
+        intent.putExtra("firstname", firstname);
+        intent.putExtra("username", username);
+        intent.putExtra("instructorId", instructorID);
         finish();
+        startActivity(intent);
 
     }
 

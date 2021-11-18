@@ -8,7 +8,7 @@ public class Class {
     private int min;
     private String difficulty;
     private String day;
-    private String capacity;
+    private int capacity;
 
 
     public Class (int id, String name, String description){
@@ -19,10 +19,10 @@ public class Class {
         this.hour = -1;
         this.min = -1;
         this.day = null;
-        this.capacity = null;
+        this.capacity = -1;
     }
 
-    public Class(int id, String name, String description, int hour, int min, String difficulty, String day, String capacity){
+    public Class(int id, String name, String description, int hour, int min, String difficulty, String day, int capacity){
         this.name = name;
         this.description = description;
         this.id = id;
@@ -44,5 +44,5 @@ public class Class {
 
     public int getId(){return id;}
 
-    public String getCapacity(){return capacity;}
+    public int getCapacity(){return capacity;}
 }

@@ -98,12 +98,12 @@ ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.x
 		ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:20:13-36
 	android:name
 		ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:19:13-57
-activity#com.example.finalproject.Instructor_ViewAllClasses
+activity#com.example.finalproject.Instructor_ViewMyClasses
 ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:21:9-23:39
 	android:exported
 		ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:23:13-36
 	android:name
-		ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-54
+		ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-53
 activity#com.example.finalproject.InstructorLoginPage
 ADDED from C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:24:9-26:39
 	android:exported

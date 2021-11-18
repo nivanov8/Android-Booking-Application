@@ -59,7 +59,7 @@ public class Signup2 extends AppCompatActivity {
             String fname = member.getFirstname();
 
             intent2.putExtra("type", "member");
-            intent2.putExtra("firstName", fname);
+            intent2.putExtra("firstname", fname);
             intent2.putExtra("username", uname);
 
             startActivity(intent2);
@@ -74,7 +74,7 @@ public class Signup2 extends AppCompatActivity {
             String fname = instructor.getFirstname();
 
             intent2.putExtra("type", "instructor");
-            intent2.putExtra("firstName", fname);
+            intent2.putExtra("firstname", fname);
             intent2.putExtra("username", uname);
 
             startActivity(intent2);

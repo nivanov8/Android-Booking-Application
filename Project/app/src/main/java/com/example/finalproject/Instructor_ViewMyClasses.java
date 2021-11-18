@@ -22,7 +22,7 @@ public class Instructor_ViewMyClasses extends AppCompatActivity implements Adapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.instructor_view_all_classes);
+        setContentView(R.layout.instructor_view_my_classes);
 
         Intent intent = getIntent();
         instructorId = intent.getIntExtra("instructorId", -1);
@@ -30,7 +30,23 @@ public class Instructor_ViewMyClasses extends AppCompatActivity implements Adapt
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
 
+        ArrayList<Class> classList= dbHelper.findTaughtClasses(instructorId);
+        classNames = new ArrayList<String>();
+        classLV = findViewById(R.id.classes);
 
+        int size = classList.size();
+        System.out.println("SIZE: " + size);
+
+
+        for (int i = 0; i<size; i++){
+            Class cls = classList.get(i);
+            String className = cls.getName();
+            System.out.println(className);
+            classNames.add(className);
+        }
+
+        ArrayAdapter<String> classAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classNames);
+        classLV.setAdapter(classAdapter);
     }
 
     @Override

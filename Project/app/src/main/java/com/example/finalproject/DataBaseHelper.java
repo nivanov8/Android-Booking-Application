@@ -359,5 +359,61 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.insert(TEACHES_TABLE, null, cv);
     }
 
-    //public ArrayList<Class>
+    public Class findClass(int classId){
+        String query = "SELECT * FROM " + CLASS_TABLE + " WHERE " + CLASS_ID + "=" + "'" +
+                classId + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            String name = cursor.getString(1);
+            String description = cursor.getString(2);
+            int hour = cursor.getInt(3);
+            int min = cursor.getInt(4);
+            String difficulty = cursor.getString(5);
+            String day = cursor.getString(6);
+            int capacity = cursor.getInt(7);
+
+            Class cls = new Class(classId, name, description, hour, min, difficulty, day, capacity);
+            return cls;
+        }
+        return null;
+
+    }
+
+    public ArrayList<Class> findTaughtClasses(int instructorId){
+        ArrayList<Class> list = new ArrayList<Class>();
+
+        String query = "SELECT * FROM " + TEACHES_TABLE + " WHERE " + INSTRUCTOR_ID + "=" + "'" +
+                instructorId + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                int classId = cursor.getInt(1);
+                Class cls = findClass(classId);
+                list.add(cls);
+
+            } while (cursor.moveToNext());
+        }
+        return list;
+    }
+
+    public boolean isTaught(int classId){
+        String query = "SELECT * FROM " +  TEACHES_TABLE + " WHERE " + CLASS_ID + "=" +
+                "'" + classId + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            return true;
+        }
+        return false;
+    }
 }

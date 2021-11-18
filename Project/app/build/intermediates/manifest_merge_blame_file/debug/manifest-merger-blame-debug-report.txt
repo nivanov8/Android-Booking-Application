@@ -49,8 +49,8 @@
 30-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:20:13-36
 31        <activity
 31-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:21:9-23:39
-32            android:name="com.example.finalproject.Instructor_ViewAllClasses"
-32-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-54
+32            android:name="com.example.finalproject.Instructor_ViewMyClasses"
+32-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:22:13-53
 33            android:exported="true" />
 33-->C:\Users\nicki\Desktop\Project\Project\app\src\main\AndroidManifest.xml:23:13-36
 34        <activity

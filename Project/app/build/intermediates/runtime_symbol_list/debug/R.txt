@@ -2341,7 +2341,7 @@ int id user_login 0x7f0801f4
 int id user_signup 0x7f0801f5
 int id username 0x7f0801f6
 int id vertical_only 0x7f0801f7
-int id view_all_classes 0x7f08020d
+int id view_my_classes 0x7f08021e
 int id view_offset_helper 0x7f0801f8
 int id view_transition 0x7f0801f9
 int id view_tree_lifecycle_owner 0x7f0801fa
@@ -2451,7 +2451,7 @@ int layout instructor_edit_class 0x7f0b0089
 int layout instructor_login_page 0x7f0b008b
 int layout instructor_schedule_class 0x7f0b008a
 int layout instructor_schedule_class_list 0x7f0b008c
-int layout instructor_view_all_classes 0x7f0b0083
+int layout instructor_view_my_classes 0x7f0b008d
 int layout login 0x7f0b0084
 int layout login_page 0x7f0b0085
 int layout main 0x7f0b0086
