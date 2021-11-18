@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class InstructorLoginPage extends AppCompatActivity {
 
+    private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +20,7 @@ public class InstructorLoginPage extends AppCompatActivity {
         String type = intent.getStringExtra("type").toString();
         String firstname = intent.getStringExtra("firstName").toString();
         String username = intent.getStringExtra("username").toString();
+        id = intent.getIntExtra("id", -1);
 
         TextView text = (TextView) findViewById(R.id.instructor_name);
         text.append(firstname);
@@ -30,6 +33,7 @@ public class InstructorLoginPage extends AppCompatActivity {
 
     public void onScheduleClass(View view){
         Intent intent = new Intent(getApplicationContext(), Instructor_ScheduleClassList.class);
+        intent.putExtra("id", id);
         startActivity(intent);
     }
 

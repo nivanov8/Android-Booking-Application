@@ -13,15 +13,21 @@ import java.util.ArrayList;
 
 public class Instructor_ScheduleClassList extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ArrayList<Class> classList;
-    ArrayList<String> classNames;
-    ArrayList<Integer> classIds;
-    ListView classLV;
+    private ArrayList<Class> classList;
+    private ArrayList<String> classNames;
+    private ArrayList<Integer> classIds;
+    private ListView classLV;
+    private int instructorId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instructor_view_all_classes);
+
+        //get the instructor id
+        Intent intent = getIntent();
+        instructorId = intent.getIntExtra("id", -1);
+
         DataBaseHelper dbHelper = new DataBaseHelper(this);
 
         classList = dbHelper.getAllClasses();
@@ -50,8 +56,9 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         String name = adapterView.getItemAtPosition(i).toString();
         Intent intent = new Intent(getApplicationContext(), Instructor_ScheduleClass.class);
 
-        intent.putExtra("id", id);
+        intent.putExtra("classId", id);
         intent.putExtra("name", name);
+        intent.putExtra("instructorId", instructorId);
         startActivity(intent);
 
     }

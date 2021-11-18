@@ -2232,8 +2232,6 @@ int id spacer 0x7f08018f
 int id special_effects_controller_view_tag 0x7f080190
 int id spinner1 0x7f08020f
 int id spinner2 0x7f080211
-int id spinner3 0x7f080218
-int id spinner4 0x7f080212
 int id spline 0x7f080191
 int id split_action_bar 0x7f080192
 int id spread 0x7f080193
@@ -2296,9 +2294,8 @@ int id textView20 0x7f0801cb
 int id textView21 0x7f080209
 int id textView22 0x7f080214
 int id textView23 0x7f08020a
+int id textView24 0x7f08021d
 int id textView25 0x7f080215
-int id textView26 0x7f080216
-int id textView28 0x7f080219
 int id textView3 0x7f0801cc
 int id textView4 0x7f0801cd
 int id textView5 0x7f0801ce
@@ -2316,6 +2313,7 @@ int id textinput_placeholder 0x7f0801d9
 int id textinput_prefix_text 0x7f0801da
 int id textinput_suffix_text 0x7f0801db
 int id time 0x7f0801dc
+int id timePicker1 0x7f08021c
 int id title 0x7f0801dd
 int id titleDividerNoCustom 0x7f0801de
 int id title_template 0x7f0801df

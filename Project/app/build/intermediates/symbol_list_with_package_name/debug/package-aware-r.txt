@@ -2233,8 +2233,6 @@ id spacer
 id special_effects_controller_view_tag
 id spinner1
 id spinner2
-id spinner3
-id spinner4
 id spline
 id split_action_bar
 id spread
@@ -2297,9 +2295,8 @@ id textView20
 id textView21
 id textView22
 id textView23
+id textView24
 id textView25
-id textView26
-id textView28
 id textView3
 id textView4
 id textView5
@@ -2317,6 +2314,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timePicker1
 id title
 id titleDividerNoCustom
 id title_template

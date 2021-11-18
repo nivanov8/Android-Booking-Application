@@ -60,12 +60,12 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), InstructorLoginPage.class);
                 String fname = user.getFirstname();
                 String uname = user.getUsername();
+                int id = user.getId();
 
                 intent.putExtra("type", "instructor");
                 intent.putExtra("firstName", fname);
                 intent.putExtra("username", uname);
-                System.out.println(fname);
-                System.out.println(uname);
+                intent.putExtra("id", id);
 
                 startActivity(intent);
             }

@@ -32,10 +32,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String CLASS_TABLE = "CLASS_TABLE";
     public static final String CLASS_NAME = "CLASS_NAME";
     public static final String CLASS_DESCRIPTION = "CLASS_DESCRIPTION";
-    public static final String CLASS_TIME = "CLASS_TIME";
+    public static final String CLASS_HOUR = "CLASS_HOUR";
+    public static final String CLASS_MIN = "CLASS_MIN";
     public static final String CLASS_DIFFICULTY = "CLASS_DIFFICULTY";
     public static final String CLASS_DAY = "CLASS_DAY";
     public static final String CLASS_CAPACITY = "CLASS_CAPACITY";
+
+    public static final String TEACHES_TABLE = "TEACHES_TABLE";
 
 
     public DataBaseHelper(@Nullable Context context) {
@@ -53,12 +56,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 INSTRUCTOR_EMAIL + " TEXT)";
 
         String createClassTable = "CREATE TABLE " + CLASS_TABLE + " (" + CLASS_ID + " INTEGER PRIMARY KEY, " + CLASS_NAME +
-                " TEXT, " + CLASS_DESCRIPTION + " TEXT, " + CLASS_TIME + " TEXT, " + CLASS_DIFFICULTY + " TEXT, " + CLASS_DAY +
-                " TEXT," + CLASS_CAPACITY + " TEXT)";
+                " TEXT, " + CLASS_DESCRIPTION + " TEXT, " + CLASS_HOUR + " TEXT, " + CLASS_MIN + " TEXT, " +
+                CLASS_DIFFICULTY + " TEXT, " + CLASS_DAY + " TEXT," + CLASS_CAPACITY + " TEXT)";
+
+        String createTeachesTables = "CREATE TABLE " + TEACHES_TABLE + " (" + INSTRUCTOR_ID + " INTEGER, " + CLASS_ID +
+                " INTEGER, " + "FOREIGN KEY (" + INSTRUCTOR_ID + ") REFERENCES " + INSTRUCTOR_TABLE + "(" + INSTRUCTOR_ID +
+                "), FOREIGN KEY (" + CLASS_ID + ") REFERENCES " + CLASS_TABLE + "(" + CLASS_ID + "))";
+
 
         db.execSQL(createInstructorsTable);
         db.execSQL(createMembersTable);
         db.execSQL(createClassTable);
+        db.execSQL(createTeachesTables);
     }
 
     @Override
@@ -110,7 +119,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     //add class to DB
-    public Class addClass(String name, String description, String time, String difficulty, String day, String capacity){
+    public Class addClass(String name, String description, int hour, int min, String difficulty, String day, String capacity){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -118,7 +127,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_ID, id);
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
-        cv.put(CLASS_TIME, time);
+        cv.put(CLASS_HOUR, hour);
+        cv.put(CLASS_MIN, min);
         cv.put(CLASS_DIFFICULTY, difficulty);
         cv.put(CLASS_DAY, day);
 
@@ -321,12 +331,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     //update a class
     public void updateClass(int id, String name, String description){
-        String query = "UPDATE " + CLASS_TABLE + " SET " + CLASS_NAME + "=" + "'" + name + "'" + " WHERE " +
-                CLASS_ID + "=" + "'" + id + "'";
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)} );
+    }
+
+    public void updateTeachClass(int id, String difficulty, String day, int hour, int min, int capacity){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(CLASS_DIFFICULTY, difficulty);
+        cv.put(CLASS_DAY, day);
+        cv.put(CLASS_HOUR, hour);
+        cv.put(CLASS_MIN, min);
+        cv.put(CLASS_CAPACITY, capacity);
+        db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)});
     }
 }
