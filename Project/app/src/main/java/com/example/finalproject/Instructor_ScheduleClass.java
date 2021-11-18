@@ -66,6 +66,11 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
 
+        dbHelper.addTeacher(instructorID, classId);
+
+        Toast.makeText(this, "Class added to schedule", Toast.LENGTH_SHORT).show();
+        finish();
+
     }
 
     //making the options for the spinner (difficulty)

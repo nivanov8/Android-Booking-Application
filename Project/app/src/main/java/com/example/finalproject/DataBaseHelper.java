@@ -348,4 +348,16 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_CAPACITY, capacity);
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)});
     }
+
+    public void addTeacher(int instructorId, int classId){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(INSTRUCTOR_ID, instructorId);
+        cv.put(CLASS_ID, classId);
+
+        db.insert(TEACHES_TABLE, null, cv);
+    }
+
+    //public ArrayList<Class>
 }

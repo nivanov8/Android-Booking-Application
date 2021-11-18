@@ -19,7 +19,7 @@
             android:name=".Instructor_ScheduleClassList"
             android:exported="true" />
         <activity
-            android:name=".Instructor_ViewAllClasses"
+            android:name=".Instructor_ViewMyClasses"
             android:exported="true" />
         <activity
             android:name=".InstructorLoginPage"

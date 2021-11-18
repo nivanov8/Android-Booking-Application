@@ -20,14 +20,14 @@ com/example/finalproject/EditClass.java
  com.example.finalproject.EditClass
 com/example/finalproject/Instructor.java
  com.example.finalproject.Instructor
-com/example/finalproject/Instructor_ScheduleClass.java
- com.example.finalproject.Instructor_ScheduleClass
+com/example/finalproject/CreateClass.java
+ com.example.finalproject.CreateClass
 com/example/finalproject/BuildConfig.java
  com.example.finalproject.BuildConfig
 com/example/finalproject/Instructor_ViewAllClasses.java
  com.example.finalproject.Instructor_ViewAllClasses
-com/example/finalproject/Instructor_ScheduleClassList.java
- com.example.finalproject.Instructor_ScheduleClassList
+com/example/finalproject/Class.java
+ com.example.finalproject.Class
 com/example/finalproject/InstructorLoginPage.java
  com.example.finalproject.InstructorLoginPage
 com/example/finalproject/DeleteUser.java
@@ -38,7 +38,7 @@ com/example/finalproject/User.java
  com.example.finalproject.User
 com/example/finalproject/Member.java
  com.example.finalproject.Member
-com/example/finalproject/Class.java
- com.example.finalproject.Class
-com/example/finalproject/CreateClass.java
- com.example.finalproject.CreateClass
+com/example/finalproject/Instructor_ScheduleClass.java
+ com.example.finalproject.Instructor_ScheduleClass
+com/example/finalproject/Instructor_ScheduleClassList.java
+ com.example.finalproject.Instructor_ScheduleClassList
