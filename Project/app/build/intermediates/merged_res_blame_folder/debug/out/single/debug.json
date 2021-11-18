@@ -76,6 +76,10 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_schedule_class_list.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_schedule_class_list.xml"
+    },
+    {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_create_class.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\create_class.xml"
     },

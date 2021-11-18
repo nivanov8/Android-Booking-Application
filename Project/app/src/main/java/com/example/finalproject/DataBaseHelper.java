@@ -32,6 +32,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String CLASS_TABLE = "CLASS_TABLE";
     public static final String CLASS_NAME = "CLASS_NAME";
     public static final String CLASS_DESCRIPTION = "CLASS_DESCRIPTION";
+    public static final String CLASS_TIME = "CLASS_TIME";
+    public static final String CLASS_DIFFICULTY = "CLASS_DIFFICULTY";
+    public static final String CLASS_DAY = "CLASS_DAY";
+    public static final String CLASS_CAPACITY = "CLASS_CAPACITY";
 
 
     public DataBaseHelper(@Nullable Context context) {
@@ -49,7 +53,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 INSTRUCTOR_EMAIL + " TEXT)";
 
         String createClassTable = "CREATE TABLE " + CLASS_TABLE + " (" + CLASS_ID + " INTEGER PRIMARY KEY, " + CLASS_NAME +
-                " TEXT, " + CLASS_DESCRIPTION + " TEXT)";
+                " TEXT, " + CLASS_DESCRIPTION + " TEXT, " + CLASS_TIME + " TEXT, " + CLASS_DIFFICULTY + " TEXT, " + CLASS_DAY +
+                " TEXT," + CLASS_CAPACITY + " TEXT)";
 
         db.execSQL(createInstructorsTable);
         db.execSQL(createMembersTable);
@@ -105,7 +110,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     //add class to DB
-    public Class addClass(String name, String description){
+    public Class addClass(String name, String description, String time, String difficulty, String day, String capacity){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -113,6 +118,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_ID, id);
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
+        cv.put(CLASS_TIME, time);
+        cv.put(CLASS_DIFFICULTY, difficulty);
+        cv.put(CLASS_DAY, day);
+
 
         long insert = db.insert(CLASS_TABLE, null, cv);
         Class cls = new Class(id, name, description);

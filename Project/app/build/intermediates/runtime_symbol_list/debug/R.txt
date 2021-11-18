@@ -1945,6 +1945,7 @@ int id classDescription 0x7f080076
 int id classListView 0x7f080077
 int id className 0x7f080078
 int id classNametext 0x7f080079
+int id class_capacity 0x7f080210
 int id classdescriptionText 0x7f08007a
 int id classes 0x7f08020e
 int id clear_text 0x7f08007b
@@ -2189,6 +2190,7 @@ int id save_non_transition_alpha 0x7f080167
 int id save_overlay_view 0x7f080168
 int id sawtooth 0x7f080169
 int id scale 0x7f08016a
+int id schedule 0x7f08021a
 int id schedule_class 0x7f08020c
 int id screen 0x7f08016b
 int id scroll 0x7f08016c
@@ -2228,6 +2230,10 @@ int id snapMargins 0x7f08018d
 int id south 0x7f08018e
 int id spacer 0x7f08018f
 int id special_effects_controller_view_tag 0x7f080190
+int id spinner1 0x7f08020f
+int id spinner2 0x7f080211
+int id spinner3 0x7f080218
+int id spinner4 0x7f080212
 int id spline 0x7f080191
 int id split_action_bar 0x7f080192
 int id spread 0x7f080193
@@ -2287,7 +2293,12 @@ int id textView18 0x7f0801c8
 int id textView19 0x7f0801c9
 int id textView2 0x7f0801ca
 int id textView20 0x7f0801cb
+int id textView21 0x7f080209
+int id textView22 0x7f080214
 int id textView23 0x7f08020a
+int id textView25 0x7f080215
+int id textView26 0x7f080216
+int id textView28 0x7f080219
 int id textView3 0x7f0801cc
 int id textView4 0x7f0801cd
 int id textView5 0x7f0801ce
@@ -2441,6 +2452,7 @@ int layout edit_class 0x7f0b0081
 int layout instructor_edit_class 0x7f0b0089
 int layout instructor_login_page 0x7f0b008b
 int layout instructor_schedule_class 0x7f0b008a
+int layout instructor_schedule_class_list 0x7f0b008c
 int layout instructor_view_all_classes 0x7f0b0083
 int layout login 0x7f0b0084
 int layout login_page 0x7f0b0085

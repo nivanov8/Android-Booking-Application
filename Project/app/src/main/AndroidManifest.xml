@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".Instructor_ScheduleClass"
+            android:exported="true" />
+        <activity
             android:name=".Instructor_EditClass"
             android:exported="true" />
         <activity
-            android:name=".Instructor_ScheduleClass"
+            android:name=".Instructor_ScheduleClassList"
             android:exported="true" />
         <activity
             android:name=".Instructor_ViewAllClasses"

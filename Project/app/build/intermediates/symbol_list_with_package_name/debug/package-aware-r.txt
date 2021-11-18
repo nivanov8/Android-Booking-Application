@@ -1946,6 +1946,7 @@ id classDescription
 id classListView
 id className
 id classNametext
+id class_capacity
 id classdescriptionText
 id classes
 id clear_text
@@ -2190,6 +2191,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id schedule
 id schedule_class
 id screen
 id scroll
@@ -2229,6 +2231,10 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id spinner1
+id spinner2
+id spinner3
+id spinner4
 id spline
 id split_action_bar
 id spread
@@ -2288,7 +2294,12 @@ id textView18
 id textView19
 id textView2
 id textView20
+id textView21
+id textView22
 id textView23
+id textView25
+id textView26
+id textView28
 id textView3
 id textView4
 id textView5
@@ -2442,6 +2453,7 @@ layout edit_class
 layout instructor_edit_class
 layout instructor_login_page
 layout instructor_schedule_class
+layout instructor_schedule_class_list
 layout instructor_view_all_classes
 layout login
 layout login_page

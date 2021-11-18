@@ -1,9 +1,21 @@
+com/example/finalproject/Instructor.java
+ com.example.finalproject.Instructor
+com/example/finalproject/BuildConfig.java
+ com.example.finalproject.BuildConfig
+com/example/finalproject/Member.java
+ com.example.finalproject.Member
+com/example/finalproject/User.java
+ com.example.finalproject.User
+com/example/finalproject/AdminPage.java
+ com.example.finalproject.AdminPage
+com/example/finalproject/InstructorLoginPage.java
+ com.example.finalproject.InstructorLoginPage
 com/example/finalproject/Signup2.java
  com.example.finalproject.Signup2
 com/example/finalproject/ChangeClassInfo.java
  com.example.finalproject.ChangeClassInfo
-com/example/finalproject/DeleteClass.java
- com.example.finalproject.DeleteClass
+com/example/finalproject/DeleteUser.java
+ com.example.finalproject.DeleteUser
 com/example/finalproject/Instructor_EditClass.java
  com.example.finalproject.Instructor_EditClass
 com/example/finalproject/MainActivity.java
@@ -12,31 +24,21 @@ com/example/finalproject/LoginPage.java
  com.example.finalproject.LoginPage
 com/example/finalproject/Signup.java
  com.example.finalproject.Signup
-com/example/finalproject/DataBaseHelper.java
- com.example.finalproject.DataBaseHelper
 com/example/finalproject/Login.java
  com.example.finalproject.Login
-com/example/finalproject/EditClass.java
- com.example.finalproject.EditClass
-com/example/finalproject/Instructor.java
- com.example.finalproject.Instructor
 com/example/finalproject/Instructor_ScheduleClass.java
  com.example.finalproject.Instructor_ScheduleClass
-com/example/finalproject/BuildConfig.java
- com.example.finalproject.BuildConfig
-com/example/finalproject/Instructor_ViewAllClasses.java
- com.example.finalproject.Instructor_ViewAllClasses
-com/example/finalproject/InstructorLoginPage.java
- com.example.finalproject.InstructorLoginPage
-com/example/finalproject/DeleteUser.java
- com.example.finalproject.DeleteUser
-com/example/finalproject/AdminPage.java
- com.example.finalproject.AdminPage
-com/example/finalproject/User.java
- com.example.finalproject.User
-com/example/finalproject/Member.java
- com.example.finalproject.Member
-com/example/finalproject/Class.java
- com.example.finalproject.Class
 com/example/finalproject/CreateClass.java
  com.example.finalproject.CreateClass
+com/example/finalproject/DeleteClass.java
+ com.example.finalproject.DeleteClass
+com/example/finalproject/Instructor_ViewAllClasses.java
+ com.example.finalproject.Instructor_ViewAllClasses
+com/example/finalproject/Instructor_ScheduleClassList.java
+ com.example.finalproject.Instructor_ScheduleClassList
+com/example/finalproject/Class.java
+ com.example.finalproject.Class
+com/example/finalproject/DataBaseHelper.java
+ com.example.finalproject.DataBaseHelper
+com/example/finalproject/EditClass.java
+ com.example.finalproject.EditClass

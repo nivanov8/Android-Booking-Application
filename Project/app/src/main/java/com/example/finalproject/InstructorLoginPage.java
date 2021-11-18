@@ -29,7 +29,7 @@ public class InstructorLoginPage extends AppCompatActivity {
     }
 
     public void onScheduleClass(View view){
-        Intent intent = new Intent(getApplicationContext(), Instructor_ScheduleClass.class);
+        Intent intent = new Intent(getApplicationContext(), Instructor_ScheduleClassList.class);
         startActivity(intent);
     }
 
