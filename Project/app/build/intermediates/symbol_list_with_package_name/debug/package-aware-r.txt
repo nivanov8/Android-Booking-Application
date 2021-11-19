@@ -1926,6 +1926,7 @@ id bounceStart
 id buttonPanel
 id cache_measures
 id cancel_button
+id capacity
 id carryVelocity
 id center
 id center_horizontal
@@ -1972,6 +1973,7 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id day
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -1980,12 +1982,14 @@ id delUser
 id deleteClass
 id deltaRelative
 id dependency_ordering
+id description
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id difficulty
 id dimensions
 id direct
 id disableHome
@@ -2140,6 +2144,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id name
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
@@ -2299,7 +2304,13 @@ id textView22
 id textView23
 id textView24
 id textView25
+id textView26
+id textView28
 id textView3
+id textView30
+id textView33
+id textView35
+id textView37
 id textView4
 id textView5
 id textView6
@@ -2456,6 +2467,7 @@ layout instructor_login_page
 layout instructor_schedule_class
 layout instructor_schedule_class_list
 layout instructor_view_my_classes
+layout instructor_view_my_classes_list
 layout login
 layout login_page
 layout main

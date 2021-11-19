@@ -20,55 +20,58 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
-            android:name="com.example.finalproject.Instructor_EditClass"
+            android:name="com.example.finalproject.instructor.Instructor_ViewMyClasses"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Instructor_ScheduleClass"
+            android:name="com.example.finalproject.instructor.Instructor_EditClass"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Instructor_EditClassList"
+            android:name="com.example.finalproject.instructor.Instructor_ScheduleClass"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Instructor_ScheduleClassList"
+            android:name="com.example.finalproject.instructor.Instructor_EditClassList"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Instructor_ViewMyClasses"
+            android:name="com.example.finalproject.instructor.Instructor_ScheduleClassList"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.InstructorLoginPage"
+            android:name="com.example.finalproject.instructor.Instructor_ViewMyClassesList"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.ChangeClassInfo"
+            android:name="com.example.finalproject.instructor.InstructorLoginPage"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.DeleteUser"
+            android:name="com.example.finalproject.baseadmin.ChangeClassInfo"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.EditClass"
+            android:name="com.example.finalproject.baseadmin.DeleteUser"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.DeleteClass"
+            android:name="com.example.finalproject.baseadmin.EditClass"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.CreateClass"
+            android:name="com.example.finalproject.baseadmin.DeleteClass"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.AdminPage"
+            android:name="com.example.finalproject.baseadmin.CreateClass"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.LoginPage"
+            android:name="com.example.finalproject.baseadmin.AdminPage"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Signup"
+            android:name="com.example.finalproject.baseadmin.LoginPage"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Signup2"
+            android:name="com.example.finalproject.baseadmin.Signup"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.Login"
+            android:name="com.example.finalproject.baseadmin.Signup2"
             android:exported="true" />
         <activity
-            android:name="com.example.finalproject.MainActivity"
+            android:name="com.example.finalproject.baseadmin.Login"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.baseadmin.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

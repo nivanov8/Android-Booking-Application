@@ -10,55 +10,58 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
-            android:name=".Instructor_EditClass"
+            android:name=".instructor.Instructor_ViewMyClasses"
             android:exported="true" />
         <activity
-            android:name=".Instructor_ScheduleClass"
+            android:name=".instructor.Instructor_EditClass"
             android:exported="true" />
         <activity
-            android:name=".Instructor_EditClassList"
+            android:name=".instructor.Instructor_ScheduleClass"
             android:exported="true" />
         <activity
-            android:name=".Instructor_ScheduleClassList"
+            android:name=".instructor.Instructor_EditClassList"
             android:exported="true" />
         <activity
-            android:name=".Instructor_ViewMyClasses"
+            android:name=".instructor.Instructor_ScheduleClassList"
             android:exported="true" />
         <activity
-            android:name=".InstructorLoginPage"
+            android:name=".instructor.Instructor_ViewMyClassesList"
             android:exported="true" />
         <activity
-            android:name=".ChangeClassInfo"
+            android:name=".instructor.InstructorLoginPage"
             android:exported="true" />
         <activity
-            android:name=".DeleteUser"
+            android:name=".baseadmin.ChangeClassInfo"
             android:exported="true" />
         <activity
-            android:name=".EditClass"
+            android:name=".baseadmin.DeleteUser"
             android:exported="true" />
         <activity
-            android:name=".DeleteClass"
+            android:name=".baseadmin.EditClass"
             android:exported="true" />
         <activity
-            android:name=".CreateClass"
+            android:name=".baseadmin.DeleteClass"
             android:exported="true" />
         <activity
-            android:name=".AdminPage"
+            android:name=".baseadmin.CreateClass"
             android:exported="true" />
         <activity
-            android:name=".LoginPage"
+            android:name=".baseadmin.AdminPage"
             android:exported="true" />
         <activity
-            android:name=".Signup"
+            android:name=".baseadmin.LoginPage"
             android:exported="true" />
         <activity
-            android:name=".Signup2"
+            android:name=".baseadmin.Signup"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".baseadmin.Signup2"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".baseadmin.Login"
+            android:exported="true" />
+        <activity
+            android:name=".baseadmin.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

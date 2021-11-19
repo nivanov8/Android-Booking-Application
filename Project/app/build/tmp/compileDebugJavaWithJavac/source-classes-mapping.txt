@@ -1,46 +1,48 @@
-com/example/finalproject/Signup2.java
- com.example.finalproject.Signup2
-com/example/finalproject/ChangeClassInfo.java
- com.example.finalproject.ChangeClassInfo
-com/example/finalproject/DeleteClass.java
- com.example.finalproject.DeleteClass
-com/example/finalproject/CreateClass.java
- com.example.finalproject.CreateClass
-com/example/finalproject/MainActivity.java
- com.example.finalproject.MainActivity
-com/example/finalproject/LoginPage.java
- com.example.finalproject.LoginPage
-com/example/finalproject/Class.java
- com.example.finalproject.Class
-com/example/finalproject/Signup.java
- com.example.finalproject.Signup
-com/example/finalproject/DataBaseHelper.java
- com.example.finalproject.DataBaseHelper
-com/example/finalproject/Login.java
- com.example.finalproject.Login
-com/example/finalproject/EditClass.java
- com.example.finalproject.EditClass
-com/example/finalproject/Instructor.java
- com.example.finalproject.Instructor
-com/example/finalproject/Instructor_ScheduleClass.java
- com.example.finalproject.Instructor_ScheduleClass
+com/example/finalproject/baseadmin/Instructor.java
+ com.example.finalproject.baseadmin.Instructor
+com/example/finalproject/baseadmin/User.java
+ com.example.finalproject.baseadmin.User
 com/example/finalproject/BuildConfig.java
  com.example.finalproject.BuildConfig
-com/example/finalproject/Instructor_ViewMyClasses.java
- com.example.finalproject.Instructor_ViewMyClasses
-com/example/finalproject/Instructor_ScheduleClassList.java
- com.example.finalproject.Instructor_ScheduleClassList
-com/example/finalproject/InstructorLoginPage.java
- com.example.finalproject.InstructorLoginPage
-com/example/finalproject/DeleteUser.java
- com.example.finalproject.DeleteUser
-com/example/finalproject/AdminPage.java
- com.example.finalproject.AdminPage
-com/example/finalproject/User.java
- com.example.finalproject.User
-com/example/finalproject/Member.java
- com.example.finalproject.Member
-com/example/finalproject/Instructor_EditClass.java
- com.example.finalproject.Instructor_EditClass
-com/example/finalproject/Instructor_EditClassList.java
- com.example.finalproject.Instructor_EditClassList
+com/example/finalproject/baseadmin/LoginPage.java
+ com.example.finalproject.baseadmin.LoginPage
+com/example/finalproject/instructor/InstructorLoginPage.java
+ com.example.finalproject.instructor.InstructorLoginPage
+com/example/finalproject/baseadmin/Member.java
+ com.example.finalproject.baseadmin.Member
+com/example/finalproject/baseadmin/AdminPage.java
+ com.example.finalproject.baseadmin.AdminPage
+com/example/finalproject/baseadmin/Login.java
+ com.example.finalproject.baseadmin.Login
+com/example/finalproject/instructor/Instructor_EditClass.java
+ com.example.finalproject.instructor.Instructor_EditClass
+com/example/finalproject/baseadmin/DeleteUser.java
+ com.example.finalproject.baseadmin.DeleteUser
+com/example/finalproject/baseadmin/Signup.java
+ com.example.finalproject.baseadmin.Signup
+com/example/finalproject/baseadmin/Signup2.java
+ com.example.finalproject.baseadmin.Signup2
+com/example/finalproject/baseadmin/MainActivity.java
+ com.example.finalproject.baseadmin.MainActivity
+com/example/finalproject/instructor/Instructor_ScheduleClass.java
+ com.example.finalproject.instructor.Instructor_ScheduleClass
+com/example/finalproject/baseadmin/ChangeClassInfo.java
+ com.example.finalproject.baseadmin.ChangeClassInfo
+com/example/finalproject/baseadmin/CreateClass.java
+ com.example.finalproject.baseadmin.CreateClass
+com/example/finalproject/baseadmin/Class.java
+ com.example.finalproject.baseadmin.Class
+com/example/finalproject/baseadmin/DataBaseHelper.java
+ com.example.finalproject.baseadmin.DataBaseHelper
+com/example/finalproject/instructor/Instructor_ScheduleClassList.java
+ com.example.finalproject.instructor.Instructor_ScheduleClassList
+com/example/finalproject/instructor/Instructor_EditClassList.java
+ com.example.finalproject.instructor.Instructor_EditClassList
+com/example/finalproject/baseadmin/DeleteClass.java
+ com.example.finalproject.baseadmin.DeleteClass
+com/example/finalproject/baseadmin/EditClass.java
+ com.example.finalproject.baseadmin.EditClass
+com/example/finalproject/instructor/Instructor_ViewMyClassesList.java
+ com.example.finalproject.instructor.Instructor_ViewMyClassesList
+com/example/finalproject/instructor/Instructor_ViewMyClasses.java
+ com.example.finalproject.instructor.Instructor_ViewMyClasses
