@@ -1829,6 +1829,7 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id List
 id LoginText
 id META
 id NO_DEBUG
@@ -1839,6 +1840,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id _dynamic
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2206,6 +2208,8 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id search
+id searchInput
 id search_badge
 id search_bar
 id search_button
@@ -2305,6 +2309,7 @@ id textView23
 id textView24
 id textView25
 id textView26
+id textView27
 id textView28
 id textView3
 id textView30
@@ -2355,6 +2360,8 @@ id user_login
 id user_signup
 id username
 id vertical_only
+id viewAllSched
+id viewAllScheduled
 id view_my_classes
 id view_offset_helper
 id view_transition
@@ -2468,6 +2475,7 @@ layout instructor_schedule_class
 layout instructor_schedule_class_list
 layout instructor_view_my_classes
 layout instructor_view_my_classes_list
+layout insutrctor_view_all_scheduled
 layout login
 layout login_page
 layout main

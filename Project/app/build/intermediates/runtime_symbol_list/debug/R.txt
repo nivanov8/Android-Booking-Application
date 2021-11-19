@@ -1828,6 +1828,7 @@ int id BOTTOM_END 0x7f080001
 int id BOTTOM_START 0x7f080002
 int id CTRL 0x7f080003
 int id FUNCTION 0x7f080004
+int id List 0x7f080225
 int id LoginText 0x7f080005
 int id META 0x7f080006
 int id NO_DEBUG 0x7f080007
@@ -1838,6 +1839,7 @@ int id SHOW_PROGRESS 0x7f08000b
 int id SYM 0x7f08000c
 int id TOP_END 0x7f08000d
 int id TOP_START 0x7f08000e
+int id _dynamic 0x7f080226
 int id accelerate 0x7f08000f
 int id accessibility_action_clickable_span 0x7f080010
 int id accessibility_custom_action_0 0x7f080011
@@ -2205,6 +2207,8 @@ int id scrollIndicatorDown 0x7f08017a
 int id scrollIndicatorUp 0x7f08017b
 int id scrollView 0x7f08017c
 int id scrollable 0x7f08017d
+int id search 0x7f080227
+int id searchInput 0x7f080228
 int id search_badge 0x7f08017e
 int id search_bar 0x7f08017f
 int id search_button 0x7f080180
@@ -2304,6 +2308,7 @@ int id textView23 0x7f0801dd
 int id textView24 0x7f0801de
 int id textView25 0x7f0801df
 int id textView26 0x7f0801e0
+int id textView27 0x7f080229
 int id textView28 0x7f0801e1
 int id textView3 0x7f0801e2
 int id textView30 0x7f0801e3
@@ -2354,6 +2359,8 @@ int id user_login 0x7f08020f
 int id user_signup 0x7f080210
 int id username 0x7f080211
 int id vertical_only 0x7f080212
+int id viewAllSched 0x7f08022c
+int id viewAllScheduled 0x7f080224
 int id view_my_classes 0x7f080213
 int id view_offset_helper 0x7f080214
 int id view_transition 0x7f080215
@@ -2467,6 +2474,7 @@ int layout instructor_schedule_class 0x7f0b0035
 int layout instructor_schedule_class_list 0x7f0b0036
 int layout instructor_view_my_classes 0x7f0b0037
 int layout instructor_view_my_classes_list 0x7f0b0038
+int layout insutrctor_view_all_scheduled 0x7f0b0082
 int layout login 0x7f0b0039
 int layout login_page 0x7f0b003a
 int layout main 0x7f0b003b

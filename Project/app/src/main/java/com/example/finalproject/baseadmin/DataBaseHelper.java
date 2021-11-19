@@ -442,4 +442,81 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public Instructor findInstructor(int id){
+        String query = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_ID + "=" + "'" +
+                id + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            int instId = cursor.getInt(0);
+            String instFname = cursor.getString(1);
+            String instLname = cursor.getString(2);
+            String instUname = cursor.getString(3);
+            String instPword = cursor.getString(4);
+            String instEmail = cursor.getString(5);
+
+            Instructor inst = new Instructor(instId, instFname, instLname, instUname, instPword, instEmail);
+            return inst;
+        }
+        return null;
+
+    }
+
+    public ArrayList<Class> getAllScheduledClasses(){
+        String query = "SELECT * FROM " + TEACHES_TABLE;
+
+        ArrayList<Class> classList = new ArrayList<Class>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()){
+            do{
+                int classId = cursor.getInt(1);
+                Class cls = findClass(classId);
+                classList.add(cls);
+            }while(cursor.moveToNext());
+        }
+        return classList;
+    }
+
+    public ArrayList<Instructor> getAllScheduledInstrcutors(){
+        String query = "SELECT * FROM " + TEACHES_TABLE;
+
+        ArrayList<Instructor> instList= new ArrayList<Instructor>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToNext()){
+            do{
+                int instId = cursor.getInt(0);
+                Instructor inst = findInstructor(instId);
+                instList.add(inst);
+            }while(cursor.moveToNext());
+        }
+        return instList;
+    }
+
+    public ArrayList<Class> findScheduledClass(String input){
+        ArrayList<Class> classList = getAllScheduledClasses();
+        ArrayList<Instructor> instList = getAllScheduledInstrcutors();
+
+        ArrayList<Class> returnList = new ArrayList<Class>();
+
+        int clsSize = classList.size();
+        for (int i=0;i<clsSize;i++){
+            if (input.equals(classList.get(i).getName())){
+                returnList.add(classList.get(i));
+            }
+        }
+
+        int instSize = instList.size();
+        for(int i =0;i<instSize;i++){
+            if(input.equals(instList.get(i).getFirstname())){
+                returnList.add(classList.get(i));
+            }
+        }
+        return returnList;
+    }
 }

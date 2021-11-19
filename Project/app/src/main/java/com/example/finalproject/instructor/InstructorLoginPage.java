@@ -61,4 +61,13 @@ public class InstructorLoginPage extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
+
+    public void onViewAllScheduled(View view){
+        Intent intent = new Intent(getApplicationContext(), Instructor_ViewAllScheduled.class);
+        intent.putExtra("instructorId", instructorId);
+        intent.putExtra("name", firstname);
+        intent.putExtra("type", type);
+        intent.putExtra("username", username);
+        startActivity(intent);
+    }
 }

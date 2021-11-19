@@ -30,7 +30,6 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instructor_view_my_classes_list);
-        System.out.println("HIT");
 
         //get the instructor id
         Intent intent = getIntent();
