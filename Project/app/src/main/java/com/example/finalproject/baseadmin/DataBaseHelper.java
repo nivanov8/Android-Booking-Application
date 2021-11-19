@@ -423,4 +423,23 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
+    public boolean duplicateUsername(String username){
+        String query = "SELECT * FROM " + MEMBER_TABLE + " WHERE " + MEMBER_USERNAME +
+                "=" + "'" + username + "'";
+        String query2 = "SELECT * FROM " + INSTRUCTOR_TABLE + " WHERE " + INSTRUCTOR_USERNAME +
+                "=" + "'" + username + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor2 = db.rawQuery(query2, null);
+
+        if (cursor.moveToFirst()){
+            return true;
+        }
+        else if (cursor2.moveToFirst()){
+            return true;
+        }
+        return false;
+    }
+
 }

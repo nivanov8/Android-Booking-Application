@@ -50,6 +50,15 @@ public class Signup2 extends AppCompatActivity {
         //create database object to insert into
         DataBaseHelper db = new DataBaseHelper(Signup2.this);
 
+        //check to make sure no duplicate usernames are made
+        boolean isDuplicate = db.duplicateUsername(username);
+
+        if (isDuplicate){
+            Toast.makeText(this, "Username already taken", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
         //make appropriate class and add to database
         if(type.equals("Member")){
             Member member = db.addMember(firstname, lastname, username, password, email);

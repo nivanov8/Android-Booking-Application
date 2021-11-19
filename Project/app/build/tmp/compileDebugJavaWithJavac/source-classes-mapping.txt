@@ -12,8 +12,8 @@ com/example/finalproject/instructor/Instructor_ViewMyClassesList.java
  com.example.finalproject.instructor.Instructor_ViewMyClassesList
 com/example/finalproject/instructor/Instructor_ViewMyClasses.java
  com.example.finalproject.instructor.Instructor_ViewMyClasses
-com/example/finalproject/baseadmin/Signup2.java
- com.example.finalproject.baseadmin.Signup2
+com/example/finalproject/baseadmin/LoginPage.java
+ com.example.finalproject.baseadmin.LoginPage
 com/example/finalproject/baseadmin/Member.java
  com.example.finalproject.baseadmin.Member
 com/example/finalproject/baseadmin/MainActivity.java
@@ -36,13 +36,13 @@ com/example/finalproject/instructor/Instructor_ScheduleClass.java
  com.example.finalproject.instructor.Instructor_ScheduleClass
 com/example/finalproject/baseadmin/DeleteClass.java
  com.example.finalproject.baseadmin.DeleteClass
-com/example/finalproject/baseadmin/Signup.java
- com.example.finalproject.baseadmin.Signup
+com/example/finalproject/instructor/InstructorLoginPage.java
+ com.example.finalproject.instructor.InstructorLoginPage
 com/example/finalproject/baseadmin/EditClass.java
  com.example.finalproject.baseadmin.EditClass
 com/example/finalproject/baseadmin/DeleteUser.java
  com.example.finalproject.baseadmin.DeleteUser
-com/example/finalproject/instructor/InstructorLoginPage.java
- com.example.finalproject.instructor.InstructorLoginPage
-com/example/finalproject/baseadmin/LoginPage.java
- com.example.finalproject.baseadmin.LoginPage
+com/example/finalproject/baseadmin/Signup2.java
+ com.example.finalproject.baseadmin.Signup2
+com/example/finalproject/baseadmin/Signup.java
+ com.example.finalproject.baseadmin.Signup
