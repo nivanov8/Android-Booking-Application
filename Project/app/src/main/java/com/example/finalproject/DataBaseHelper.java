@@ -235,7 +235,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 int id = cursor.getInt(0);
                 String name = cursor.getString(1);
                 String description = cursor.getString(2);
-                Class cls = new Class(id, name, description);
+                int hour = cursor.getInt(3);
+                int min = cursor.getInt(4);
+                String difficulty = cursor.getString(5);
+                String day = cursor.getString(6);
+                int capacity = cursor.getInt(7);
+                Class cls = new Class(id, name, description, hour, min, difficulty, day, capacity);
                 list.add(cls);
             }while(cursor.moveToNext());
         }

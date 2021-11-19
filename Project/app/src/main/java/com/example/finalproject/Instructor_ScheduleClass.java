@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
@@ -40,13 +37,13 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         popSpinner1();
         popSpinner2();
 
-        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker1);
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker2);
         timePicker.setIs24HourView(true);
 
     }
 
     public void onSchedule(View view){
-        EditText text = (EditText) findViewById(R.id.class_capacity);
+        EditText text = (EditText) findViewById(R.id.class_capacity1);
         String cap = text.getText().toString().trim();
 
         int capacity;
@@ -60,13 +57,13 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         }
 
 
-        Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
+        Spinner spinner1 = (Spinner) findViewById(R.id.spinner5);
         String difficulty = spinner1.getSelectedItem().toString().trim();
 
-        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner4);
         String day = spinner2.getSelectedItem().toString().trim();
 
-        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker1);
+        TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker2);
         int hour = timePicker.getHour();
         int min = timePicker.getMinute();
 
@@ -94,7 +91,7 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         options.add("intermediate");
         options.add("advanced");
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner5);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, options);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -111,7 +108,7 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         days.add("Saturday");
         days.add("Sunday");
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner4);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, days);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

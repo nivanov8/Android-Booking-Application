@@ -14,13 +14,13 @@
         android:layout_marginTop="86dp"
         android:layout_marginEnd="328dp"
         android:text="Difficulty"
-        app:layout_constraintBottom_toTopOf="@+id/spinner1"
+        app:layout_constraintBottom_toTopOf="@+id/spinner5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/spinner5"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner4"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -54,14 +54,14 @@
         android:layout_marginEnd="324dp"
         android:layout_marginBottom="3dp"
         android:text="Day"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/spinner4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner5" />
 
     <EditText
-        android:id="@+id/class_capacity"
+        android:id="@+id/class_capacity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -87,10 +87,10 @@
         android:text="Schedule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/class_capacity" />
+        app:layout_constraintStart_toEndOf="@+id/class_capacity1" />
 
     <TimePicker
-        android:id="@+id/timePicker1"
+        android:id="@+id/timePicker2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -111,10 +111,10 @@
         android:layout_marginEnd="291dp"
         android:layout_marginBottom="1dp"
         android:text="Choose a time"
-        app:layout_constraintBottom_toTopOf="@+id/timePicker1"
+        app:layout_constraintBottom_toTopOf="@+id/timePicker2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner4" />
 
     <TextView
         android:id="@+id/textView25"
@@ -125,9 +125,9 @@
         android:layout_marginEnd="327dp"
         android:layout_marginBottom="28dp"
         android:text="Capacity"
-        app:layout_constraintBottom_toTopOf="@+id/class_capacity"
+        app:layout_constraintBottom_toTopOf="@+id/class_capacity1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker1" />
+        app:layout_constraintTop_toBottomOf="@+id/timePicker2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

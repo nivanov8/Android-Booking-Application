@@ -1945,7 +1945,7 @@ int id classDescription 0x7f080076
 int id classListView 0x7f080077
 int id className 0x7f080078
 int id classNametext 0x7f080079
-int id class_capacity 0x7f08007a
+int id class_capacity1 0x7f080219
 int id classdescriptionText 0x7f08007b
 int id classes 0x7f08007c
 int id clear_text 0x7f08007d
@@ -2232,8 +2232,8 @@ int id snapMargins 0x7f080195
 int id south 0x7f080196
 int id spacer 0x7f080197
 int id special_effects_controller_view_tag 0x7f080198
-int id spinner1 0x7f080199
-int id spinner2 0x7f08019a
+int id spinner4 0x7f08021a
+int id spinner5 0x7f08021b
 int id spline 0x7f08019b
 int id split_action_bar 0x7f08019c
 int id spread 0x7f08019d
@@ -2315,7 +2315,7 @@ int id textinput_placeholder 0x7f0801e8
 int id textinput_prefix_text 0x7f0801e9
 int id textinput_suffix_text 0x7f0801ea
 int id time 0x7f0801eb
-int id timePicker1 0x7f0801ec
+int id timePicker2 0x7f08021c
 int id title 0x7f0801ed
 int id titleDividerNoCustom 0x7f0801ee
 int id title_template 0x7f0801ef
@@ -2450,6 +2450,7 @@ int layout design_text_input_end_icon 0x7f0b002f
 int layout design_text_input_start_icon 0x7f0b0030
 int layout edit_class 0x7f0b0031
 int layout instructor_edit_class 0x7f0b0032
+int layout instructor_edit_class_list 0x7f0b0080
 int layout instructor_login_page 0x7f0b0033
 int layout instructor_schedule_class 0x7f0b0034
 int layout instructor_schedule_class_list 0x7f0b0035

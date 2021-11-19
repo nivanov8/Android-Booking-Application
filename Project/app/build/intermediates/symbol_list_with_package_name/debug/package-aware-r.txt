@@ -1946,7 +1946,7 @@ id classDescription
 id classListView
 id className
 id classNametext
-id class_capacity
+id class_capacity1
 id classdescriptionText
 id classes
 id clear_text
@@ -2233,8 +2233,8 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinner1
-id spinner2
+id spinner4
+id spinner5
 id spline
 id split_action_bar
 id spread
@@ -2316,7 +2316,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id timePicker1
+id timePicker2
 id title
 id titleDividerNoCustom
 id title_template
@@ -2451,6 +2451,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_class
 layout instructor_edit_class
+layout instructor_edit_class_list
 layout instructor_login_page
 layout instructor_schedule_class
 layout instructor_schedule_class_list

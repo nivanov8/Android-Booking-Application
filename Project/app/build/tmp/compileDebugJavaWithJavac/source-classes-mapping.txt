@@ -4,12 +4,14 @@ com/example/finalproject/ChangeClassInfo.java
  com.example.finalproject.ChangeClassInfo
 com/example/finalproject/DeleteClass.java
  com.example.finalproject.DeleteClass
-com/example/finalproject/Instructor_EditClass.java
- com.example.finalproject.Instructor_EditClass
+com/example/finalproject/CreateClass.java
+ com.example.finalproject.CreateClass
 com/example/finalproject/MainActivity.java
  com.example.finalproject.MainActivity
 com/example/finalproject/LoginPage.java
  com.example.finalproject.LoginPage
+com/example/finalproject/Class.java
+ com.example.finalproject.Class
 com/example/finalproject/Signup.java
  com.example.finalproject.Signup
 com/example/finalproject/DataBaseHelper.java
@@ -38,7 +40,7 @@ com/example/finalproject/User.java
  com.example.finalproject.User
 com/example/finalproject/Member.java
  com.example.finalproject.Member
-com/example/finalproject/Class.java
- com.example.finalproject.Class
-com/example/finalproject/CreateClass.java
- com.example.finalproject.CreateClass
+com/example/finalproject/Instructor_EditClass.java
+ com.example.finalproject.Instructor_EditClass
+com/example/finalproject/Instructor_EditClassList.java
+ com.example.finalproject.Instructor_EditClassList

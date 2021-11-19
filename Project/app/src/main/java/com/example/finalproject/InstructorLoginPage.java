@@ -47,7 +47,7 @@ public class InstructorLoginPage extends AppCompatActivity {
     }
 
     public void onEditExistingClass(View view){
-        Intent intent = new Intent(getApplicationContext(), Instructor_EditClass.class);
+        Intent intent = new Intent(getApplicationContext(), Instructor_EditClassList.class);
         intent.putExtra("instructorId", instructorId);
         intent.putExtra("name", firstname);
         intent.putExtra("type", type);
