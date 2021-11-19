@@ -2061,6 +2061,7 @@ id immediateStop
 id included
 id info
 id instructor
+id instructorClasses
 id instructor_name
 id invisible
 id inward
@@ -2079,6 +2080,7 @@ id line3
 id linear
 id listMode
 id list_item
+id logOut
 id login
 id logout
 id masked

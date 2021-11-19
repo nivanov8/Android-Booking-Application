@@ -401,6 +401,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             } while (cursor.moveToNext());
         }
+
         return list;
     }
 
@@ -416,4 +417,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
 }

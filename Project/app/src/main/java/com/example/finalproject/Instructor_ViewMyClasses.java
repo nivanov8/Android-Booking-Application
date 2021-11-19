@@ -26,7 +26,7 @@ public class Instructor_ViewMyClasses extends AppCompatActivity implements Adapt
 
         Intent intent = getIntent();
         instructorId = intent.getIntExtra("instructorId", -1);
-
+        System.out.println("instructorId: " + instructorId);
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
 

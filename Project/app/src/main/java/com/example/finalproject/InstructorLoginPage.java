@@ -31,7 +31,6 @@ public class InstructorLoginPage extends AppCompatActivity {
     public void onViewMyClasses(View view){
         Intent intent = new Intent(getApplicationContext(), Instructor_ViewMyClasses.class);
         intent.putExtra("instructorId", instructorId);
-        System.out.println("INST LOGIN PAGE SENDING: " + firstname);
         intent.putExtra("name", firstname);
         intent.putExtra("type", type);
         intent.putExtra("username", username);
@@ -49,6 +48,14 @@ public class InstructorLoginPage extends AppCompatActivity {
 
     public void onEditExistingClass(View view){
         Intent intent = new Intent(getApplicationContext(), Instructor_EditClass.class);
+        intent.putExtra("instructorId", instructorId);
+        intent.putExtra("name", firstname);
+        intent.putExtra("type", type);
+        intent.putExtra("username", username);
+        startActivity(intent);
+    }
+    public void onLogout(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }
