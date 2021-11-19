@@ -45,7 +45,7 @@ public class Instructor_EditClassList extends AppCompatActivity implements Adapt
             Class cls = classList.get(i);
             int classId = cls.getId();
             String className = cls.getName();
-            classNames.add(className);
+            classNames.add(className + " (" + cls.getDay() + ")");
             classIds.add(classId);
         }
 
@@ -61,5 +61,12 @@ public class Instructor_EditClassList extends AppCompatActivity implements Adapt
         int classId = classIds.get(i);
         intent.putExtra("classId", classId);
         startActivity(intent);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        finish();
+        //startActivity(getIntent());
     }
 }

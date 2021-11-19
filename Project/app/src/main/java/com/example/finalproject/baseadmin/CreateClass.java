@@ -32,7 +32,7 @@ public class CreateClass extends AppCompatActivity {
 
         DataBaseHelper dbHelper = new DataBaseHelper(CreateClass.this);
 
-        Class cls = dbHelper.addClass(name, description, -1, -1, null, null, null);
+        Class cls = dbHelper.addClass(name, description, -1, -1, null, null, -1);
         Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
         finish();
     }

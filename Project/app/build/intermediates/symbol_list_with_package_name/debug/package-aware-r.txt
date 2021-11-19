@@ -1927,6 +1927,7 @@ id bounceEnd
 id bounceStart
 id buttonPanel
 id cache_measures
+id cancelClass
 id cancel_button
 id capacity
 id carryVelocity
@@ -2084,6 +2085,7 @@ id legacy
 id line1
 id line3
 id linear
+id list
 id listMode
 id list_item
 id logOut
@@ -2468,6 +2470,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout edit_class
+layout instructor_cancel_class_list
 layout instructor_edit_class
 layout instructor_edit_class_list
 layout instructor_login_page

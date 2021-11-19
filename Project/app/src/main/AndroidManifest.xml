@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".instructor.Instructor_CancelClassList"
+            android:exported="true" />
+        <activity
             android:name=".instructor.Instructor_ViewAllScheduled"
             android:exported="true" />
         <activity

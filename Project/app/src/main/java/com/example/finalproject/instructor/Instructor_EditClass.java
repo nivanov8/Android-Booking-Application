@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.finalproject.baseadmin.Class;
 import com.example.finalproject.baseadmin.DataBaseHelper;
 import com.example.finalproject.R;
 
@@ -49,7 +50,6 @@ public class Instructor_EditClass extends AppCompatActivity {
             return;
         }
 
-
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner5);
         String difficulty = spinner1.getSelectedItem().toString().trim();
 
@@ -60,12 +60,30 @@ public class Instructor_EditClass extends AppCompatActivity {
         int hour = timePicker.getHour();
         int min = timePicker.getMinute();
 
+        //check if day already taken
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
+        Class cls = dbHelper.findClass(classId);
+        String name = cls.getName();
+        String clsDay = cls.getDay();
 
-        Toast.makeText(this, "Class updated", Toast.LENGTH_SHORT).show();
+        if (clsDay.equals(day)){
+            dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
+            Toast.makeText(this, "Class updated", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        else{
+            boolean classTaken = dbHelper.classIsTaken(day, name);
 
-        finish();
+            if (classTaken){
+                Toast.makeText(this, "Class already take on this day", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            else{
+                dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
+                Toast.makeText(this, "Class updated", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }
     }
 
     //making the options for the spinner (difficulty)

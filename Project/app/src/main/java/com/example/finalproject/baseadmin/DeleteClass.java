@@ -39,9 +39,12 @@ public class DeleteClass extends AppCompatActivity implements AdapterView.OnItem
         //populate arrays with information
         int size = classes.size();
         for (int i = 0; i < size; i++){
-            classNames.add(classes.get(i).getName());
             classDescriptions.add(classes.get(i).getDescription());
             classIds.add(classes.get(i).getId());
+            //only add certain classes
+            if (classes.get(i).getHour() == -1){
+                classNames.add(classes.get(i).getName());
+            }
         }
 
         //create array adapter
@@ -59,6 +62,10 @@ public class DeleteClass extends AppCompatActivity implements AdapterView.OnItem
 
         DataBaseHelper dbHelper = new DataBaseHelper(DeleteClass.this);
         dbHelper.deleteClass(id);
+        //remove from asscoiation
+        dbHelper.deleteClassAssociation(name);
+
+
         Toast.makeText(this, "Deleted Class", Toast.LENGTH_SHORT).show();
         finish();
         startActivity(getIntent());

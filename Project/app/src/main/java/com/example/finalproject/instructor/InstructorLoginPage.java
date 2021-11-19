@@ -70,4 +70,13 @@ public class InstructorLoginPage extends AppCompatActivity {
         intent.putExtra("username", username);
         startActivity(intent);
     }
+
+    public void onCancelClass(View view){
+        Intent intent = new Intent(getApplicationContext(), Instructor_CancelClassList.class);
+        intent.putExtra("instructorId", instructorId);
+        intent.putExtra("name", firstname);
+        intent.putExtra("type", type);
+        intent.putExtra("username", username);
+        startActivity(intent);
+    }
 }

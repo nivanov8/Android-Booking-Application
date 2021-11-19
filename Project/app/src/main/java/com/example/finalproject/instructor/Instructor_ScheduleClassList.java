@@ -48,9 +48,14 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         int size = classList.size();
         System.out.println(size);
         for (int i = 0; i<size; i++){
-            classIds.add(classList.get(i).getId());
+            Class cls = classList.get(i);
+            classIds.add(cls.getId());
+            if (cls.getHour() == -1){
+                classNames.add(cls.getName());
+            }
         }
 
+        /*
         ArrayList<Integer> tempArr = new ArrayList<Integer>();
         for (int i =0; i < size; i++){
             int classId = classIds.get(i);
@@ -66,7 +71,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         }
 
         classIds = tempArr;
-
+        */
         ArrayAdapter<String> classAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classNames);
         classLV.setAdapter(classAdapter);
 
@@ -86,7 +91,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         intent.putExtra("type", type);
         intent.putExtra("firstname", firstname);
         intent.putExtra("username", username);
-        //finish();
+
         startActivity(intent);
         //System.out.println("We are here");
     }

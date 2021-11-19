@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.finalproject.baseadmin.Class;
 import com.example.finalproject.baseadmin.DataBaseHelper;
 import com.example.finalproject.R;
 
@@ -71,20 +72,36 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         int min = timePicker.getMinute();
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
-        dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
+        Class cls = dbHelper.findClass(classId);
+        String name = cls.getName();
+        String desc = cls.getDescription();
 
-        dbHelper.addTeacher(instructorID, classId);
+        System.out.println(name);
 
-        Toast.makeText(this, "Class added to schedule", Toast.LENGTH_SHORT).show();
+        //check if day is taken
+        boolean classTaken = dbHelper.classIsTaken(day, name);
 
-        Intent intent = new Intent(getApplicationContext(), InstructorLoginPage.class);
-        intent.putExtra("type", "instructor");
-        intent.putExtra("firstname", firstname);
-        intent.putExtra("username", username);
-        intent.putExtra("instructorId", instructorID);
-        finish();
-        startActivity(intent);
+        if (!classTaken){
+            //dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);
 
+            Class cl = dbHelper.addClass(name, desc, hour, min, difficulty, day, capacity);
+
+            dbHelper.addTeacher(instructorID, cl.getId());
+
+            Toast.makeText(this, "Class added to schedule", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(getApplicationContext(), InstructorLoginPage.class);
+            intent.putExtra("type", "instructor");
+            intent.putExtra("firstname", firstname);
+            intent.putExtra("username", username);
+            intent.putExtra("instructorId", instructorID);
+            finish();
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(this, "Class is already taken on this day", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 
     //making the options for the spinner (difficulty)

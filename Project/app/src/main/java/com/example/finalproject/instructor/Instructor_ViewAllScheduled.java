@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.finalproject.baseadmin.Class;
 import com.example.finalproject.baseadmin.DataBaseHelper;
@@ -30,7 +31,8 @@ public class Instructor_ViewAllScheduled extends AppCompatActivity {
 
         int size = classList.size();
         for (int i = 0; i < size; i++){
-            classNames.add(classList.get(i).getName());
+            Class cls = classList.get(i);
+            classNames.add(cls.getName() + " (" + cls.getDay() + ")");
         }
 
         ArrayAdapter<String> classAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classNames);
@@ -41,6 +43,11 @@ public class Instructor_ViewAllScheduled extends AppCompatActivity {
         EditText searchInput = (EditText) findViewById(R.id.searchInput);
         String input = searchInput.getText().toString().trim();
 
+        if (input.equals("")){
+            Toast.makeText(this, "Enter class name or instructor name to search", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         DataBaseHelper dbHelper = new DataBaseHelper(this);
         ArrayList<Class> list = dbHelper.findScheduledClass(input);
 
@@ -48,7 +55,8 @@ public class Instructor_ViewAllScheduled extends AppCompatActivity {
 
         int size = list.size();
         for(int i=0;i<size;i++){
-            names.add(list.get(i).getName());
+            Class cls = list.get(i);
+            names.add(cls.getName() + " (" + cls.getDay() + ")");
         }
         ArrayAdapter<String> classAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, names);
         classLV.setAdapter(classAdapter);
@@ -62,7 +70,8 @@ public class Instructor_ViewAllScheduled extends AppCompatActivity {
 
         int size = classList.size();
         for (int i = 0; i < size; i++){
-            classNames.add(classList.get(i).getName());
+            Class cls = classList.get(i);
+            classNames.add(cls.getName() + " (" + cls.getDay() + ")");
         }
 
         ArrayAdapter<String> classAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classNames);

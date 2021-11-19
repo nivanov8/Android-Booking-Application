@@ -45,6 +45,7 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
         //populate arrays with information
         int size = users.size();
         for (int i = 0; i < size; i++){
+            System.out.println(users.get(i).getFirstname());
             userIds.add(users.get(i).getId());
             userFNames.add(users.get(i).getFirstname());
             userLNames.add(users.get(i).getLastname());
@@ -76,6 +77,16 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
 
         DataBaseHelper dbHelper = new DataBaseHelper(DeleteUser.this);
         dbHelper.deleteUser(id, type);
+        //delete all those classes he tuaght
+        ArrayList<Class> classes = dbHelper.findTaughtClasses(id);
+        int size = classes.size();
+        for (int j = 0; j<size; j++){
+            int clsId = classes.get(i).getId();
+            dbHelper.deleteClass(clsId);
+        }
+        //delete association
+        dbHelper.deleteTeaches(id);
+
 
         Toast.makeText(this, "Deleted User", Toast.LENGTH_SHORT).show();
         finish();

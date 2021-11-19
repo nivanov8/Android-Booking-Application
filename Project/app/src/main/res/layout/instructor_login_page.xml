@@ -104,4 +104,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+    <Button
+        android:id="@+id/cancelClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="17dp"
+        android:onClick="onCancelClass"
+        android:text="cancel class"
+        app:layout_constraintBottom_toTopOf="@+id/edit_classes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/schedule_class" />
 </androidx.constraintlayout.widget.ConstraintLayout>

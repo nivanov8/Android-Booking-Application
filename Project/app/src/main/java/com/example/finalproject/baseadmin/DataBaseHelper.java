@@ -119,7 +119,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     //add class to DB
-    public Class addClass(String name, String description, int hour, int min, String difficulty, String day, String capacity){
+    public Class addClass(String name, String description, int hour, int min, String difficulty, String day, int capacity){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -131,6 +131,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_MIN, min);
         cv.put(CLASS_DIFFICULTY, difficulty);
         cv.put(CLASS_DAY, day);
+        cv.put(CLASS_CAPACITY, capacity);
 
 
         long insert = db.insert(CLASS_TABLE, null, cv);
@@ -300,6 +301,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery(query, null);
+        Cursor cursor2 = db.rawQuery(query2, null);
 
         //fill list with members first
         if(cursor.moveToFirst()) {
@@ -316,11 +318,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        Cursor cursor2 = db.rawQuery(query2, null);
-
         if(cursor2.moveToFirst()) {
             do {
                 int id = cursor2.getInt(0);
+                System.out.println(id);
                 String fname = cursor2.getString(1);
                 String lname = cursor2.getString(2);
                 String uname = cursor2.getString(3);
@@ -329,7 +330,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
                 Instructor inst = new Instructor(id, fname, lname, uname, pword, email);
                 list.add(inst);
-            } while (cursor.moveToNext());
+            } while (cursor2.moveToNext());
         }
         return list;
     }
@@ -518,5 +519,43 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             }
         }
         return returnList;
+    }
+
+    public boolean classIsTaken(String day, String name){
+        ArrayList<Class> classList = getAllScheduledClasses();
+
+        int size = classList.size();
+        for (int i =0; i<size;i++){
+            Class cls = classList.get(i);
+            //System.out.println(cls.getName());
+            if ((cls.getDay().equals(day)) && (cls.getName().equals(name))){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void deleteTaughtClass(int classId){
+        //String query = "DELETE FROM " + TEACHES_TABLE + " WHERE " + CLASS_ID + " = " + classId;
+
+        SQLiteDatabase db = getWritableDatabase();
+        //db.rawQuery(query, null);
+        db.delete(TEACHES_TABLE, "CLASS_ID=?", new String[]{String.valueOf(classId)});
+    }
+
+    public void deleteTeaches(int instId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TEACHES_TABLE, "INSTRUCTOR_ID=?", new String[]{String.valueOf(instId)});
+    }
+
+    public void deleteClassAssociation(String name){
+        ArrayList<Class> list = findScheduledClass(name);
+        SQLiteDatabase db = getWritableDatabase();
+        int size = list.size();
+        for (int i = 0; i <size; i++){
+            int clsId = list.get(i).getId();
+            deleteClass(clsId);
+            db.delete(TEACHES_TABLE, "CLASS_ID=?", new String[]{String.valueOf(clsId)});
+        }
     }
 }

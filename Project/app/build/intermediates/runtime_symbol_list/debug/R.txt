@@ -1926,6 +1926,7 @@ int id bounceEnd 0x7f080061
 int id bounceStart 0x7f080062
 int id buttonPanel 0x7f080063
 int id cache_measures 0x7f080064
+int id cancelClass 0x7f08022d
 int id cancel_button 0x7f080065
 int id capacity 0x7f080066
 int id carryVelocity 0x7f080067
@@ -2083,6 +2084,7 @@ int id legacy 0x7f0800fe
 int id line1 0x7f0800ff
 int id line3 0x7f080100
 int id linear 0x7f080101
+int id list 0x7f08022e
 int id listMode 0x7f080102
 int id list_item 0x7f080103
 int id logOut 0x7f080104
@@ -2467,6 +2469,7 @@ int layout design_navigation_menu_item 0x7f0b002e
 int layout design_text_input_end_icon 0x7f0b002f
 int layout design_text_input_start_icon 0x7f0b0030
 int layout edit_class 0x7f0b0031
+int layout instructor_cancel_class_list 0x7f0b0083
 int layout instructor_edit_class 0x7f0b0032
 int layout instructor_edit_class_list 0x7f0b0033
 int layout instructor_login_page 0x7f0b0034
