@@ -12,16 +12,16 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_view_my_classes.xml"
     },
     {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_edit_class.xml.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_edit_class.xml"
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_view_my_classes_list.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_view_my_classes_list.xml"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_edit_class_list.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_edit_class_list.xml"
     },
     {
-        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_view_my_classes_list.xml.flat",
-        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_view_my_classes_list.xml"
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_instructor_edit_class.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\instructor_edit_class.xml"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_signup2.xml.flat",
