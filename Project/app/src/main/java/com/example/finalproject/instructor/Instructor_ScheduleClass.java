@@ -76,7 +76,6 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         String name = cls.getName();
         String desc = cls.getDescription();
 
-        System.out.println(name);
 
         //check if day is taken
         boolean classTaken = dbHelper.classIsTaken(day, name);

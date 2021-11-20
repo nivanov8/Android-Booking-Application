@@ -39,9 +39,14 @@ public class EditClass extends AppCompatActivity implements AdapterView.OnItemCl
         int size = classes.size();
         System.out.println(size);
         for (int i = 0; i < size; i++){
-            classNames.add(classes.get(i).getName());
             classDescriptions.add(classes.get(i).getDescription());
             classIds.add(classes.get(i).getId());
+
+            if (classes.get(i).getHour() == -1){
+                classNames.add(classes.get(i).getName());
+            }
+
+            //change name of all the other ones
         }
 
         //create array adapter
