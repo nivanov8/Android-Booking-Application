@@ -355,6 +355,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)});
     }
 
+    public void adminUpdateClass(String oldName, String newName, String description){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(CLASS_NAME, newName);
+        cv.put(CLASS_DESCRIPTION, description);
+        db.update(CLASS_TABLE, cv, "CLASS_NAME=?", new String[]{String.valueOf(oldName)});
+    }
+
     public void addTeacher(int instructorId, int classId){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -438,6 +446,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             return true;
         }
         else if (cursor2.moveToFirst()){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean duplicateClassName(String name){
+        String query = "SELECT * FROM " + CLASS_TABLE + " WHERE " + CLASS_NAME +
+                "=" + "'" + name + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()){
             return true;
         }
         return false;

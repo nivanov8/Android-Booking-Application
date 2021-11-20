@@ -13,6 +13,8 @@ import com.example.finalproject.R;
 
 public class ChangeClassInfo extends AppCompatActivity {
 
+    String currectClassName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,7 @@ public class ChangeClassInfo extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String currectClassName = intent.getStringExtra("name").toString();
+        currectClassName = intent.getStringExtra("name").toString();
         String currentClassDesc = intent.getStringExtra("description").toString();
 
         name.append(currectClassName);
@@ -49,6 +51,7 @@ public class ChangeClassInfo extends AppCompatActivity {
 
         DataBaseHelper dbHelper = new DataBaseHelper(ChangeClassInfo.this);
         dbHelper.updateClass(classId, newName, newDesc);
+        dbHelper.adminUpdateClass(currectClassName, newName, newDesc);
 
         Intent intent2 = new Intent(getApplicationContext(), EditClass.class);
         Toast.makeText(this, "Class updated", Toast.LENGTH_SHORT).show();

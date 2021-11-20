@@ -32,9 +32,17 @@ public class CreateClass extends AppCompatActivity {
 
         DataBaseHelper dbHelper = new DataBaseHelper(CreateClass.this);
 
-        Class cls = dbHelper.addClass(name, description, -1, -1, null, null, -1);
-        Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
-        finish();
+        boolean duplicateName = dbHelper.duplicateClassName(name);
+        if(duplicateName){
+            Toast.makeText(getApplicationContext(), "Class with same name already made", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else{
+            Class cls = dbHelper.addClass(name, description, -1, -1, null, null, -1);
+            Toast.makeText(getApplicationContext(), "Class Added", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
     }
 
 
