@@ -2,8 +2,6 @@ package com.example.finalproject.member;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalproject.R;
-import com.example.finalproject.baseadmin.Class;
-import com.example.finalproject.baseadmin.DataBaseHelper;
 import com.example.finalproject.baseadmin.MainActivity;
 
 import android.content.Intent;
@@ -52,7 +50,7 @@ public class Member_LoginPage extends AppCompatActivity {
     }
 
     public void onViewMyClasses(View view){
-        Intent intent = new Intent(getApplicationContext(), Member_ViewMyClasses.class);
+        Intent intent = new Intent(getApplicationContext(), Member_ViewMyClassesList.class);
         intent.putExtra("type", type);
         intent.putExtra("firstname", firstname);
         intent.putExtra("username", username);

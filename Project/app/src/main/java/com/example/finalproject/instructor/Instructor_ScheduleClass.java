@@ -72,6 +72,7 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
         int min = timePicker.getMinute();
 
         DataBaseHelper dbHelper = new DataBaseHelper(this);
+        System.out.println("Checking id=" + classId);
         Class cls = dbHelper.findClass(classId);
         String name = cls.getName();
         String desc = cls.getDescription();
@@ -79,6 +80,8 @@ public class Instructor_ScheduleClass extends AppCompatActivity {
 
         //check if day is taken
         boolean classTaken = dbHelper.classIsTaken(day, name);
+        System.out.println(day);
+        System.out.println(name);
 
         if (!classTaken){
             //dbHelper.updateTeachClass(classId, difficulty, day, hour, min, capacity);

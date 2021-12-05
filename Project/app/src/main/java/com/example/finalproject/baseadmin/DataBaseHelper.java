@@ -111,6 +111,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         long insert = db.insert(MEMBER_TABLE, null, cv);
 
         Member member = new Member(id, firstname, lastname, username, password, email);
+        db.close();
         return member;
     }
 
@@ -133,6 +134,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         long insert = db.insert(INSTRUCTOR_TABLE, null, cv);
 
         Instructor instructor = new Instructor(id, firstname, lastname, username, password, email);
+        db.close();
         return  instructor;
     }
 
@@ -154,7 +156,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         long insert = db.insert(CLASS_TABLE, null, cv);
         Class cls = new Class(id, name, description);
-
+        db.close();
         return cls;
     }
 
@@ -178,6 +180,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cursor2.close();
 
         int maxId = Math.max(maxID1, maxID2) + 1;
+        cursor.close();
+        cursor2.close();
         return maxId;
     }
 
@@ -213,10 +217,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
                 if (uname.equals(username) && pword.equals(password)){
                     Member mem = new Member(id, fname, lname, uname, pword, email);
+                    cursor.close();
+                    db.close();
                     return mem;
                 }
             }while(cursor.moveToNext());
         }
+        cursor.close();
 
         //query instructor table if not found in user table
         String query2 = "SELECT * FROM " + INSTRUCTOR_TABLE;
@@ -233,11 +240,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
                 if (uname.equals(username) && pword.equals(password)){
                     Instructor inst = new Instructor(id, fname, lname, uname, pword, email);
+                    cursor2.close();
+                    db.close();
                     return inst;
                 }
 
             }while(cursor2.moveToNext());
         }
+        cursor2.close();
+        db.close();
         return null;
     }
 
@@ -263,6 +274,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 list.add(cls);
             }while(cursor.moveToNext());
         }
+        cursor.close();
+        db.close();
         return list;
     }
 
@@ -274,9 +287,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         if(cursor.moveToFirst()){
+            cursor.close();
             return true;
         }
         else{
+            cursor.close();
             return false;
         }
     }
@@ -303,9 +318,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         if(cursor.moveToFirst()){
+            cursor.close();
+            db.close();
             return true;
         }
         else{
+            cursor.close();
+            db.close();
             return false;
         }
     }
@@ -335,6 +354,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 list.add(member);
             } while (cursor.moveToNext());
         }
+        cursor.close();
 
         if(cursor2.moveToFirst()) {
             do {
@@ -350,6 +370,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 list.add(inst);
             } while (cursor2.moveToNext());
         }
+        cursor2.close();
+        db.close();
         return list;
     }
 
@@ -360,6 +382,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_NAME, name);
         cv.put(CLASS_DESCRIPTION, description);
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)} );
+        db.close();
     }
 
     public void updateTeachClass(int id, String difficulty, String day, int hour, int min, int capacity){
@@ -371,6 +394,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_MIN, min);
         cv.put(CLASS_CAPACITY, capacity);
         db.update(CLASS_TABLE, cv, "CLASS_ID=?", new String[]{String.valueOf(id)});
+        db.close();
     }
 
     public void adminUpdateClass(String oldName, String newName, String description){
@@ -379,6 +403,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_NAME, newName);
         cv.put(CLASS_DESCRIPTION, description);
         db.update(CLASS_TABLE, cv, "CLASS_NAME=?", new String[]{String.valueOf(oldName)});
+        db.close();
     }
 
     public void addTeacher(int instructorId, int classId){
@@ -389,6 +414,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(CLASS_ID, classId);
 
         db.insert(TEACHES_TABLE, null, cv);
+        db.close();
     }
 
     public Class findClass(int classId){
@@ -409,8 +435,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             int capacity = cursor.getInt(7);
 
             Class cls = new Class(classId, name, description, hour, min, difficulty, day, capacity);
+            cursor.close();
             return cls;
         }
+        cursor.close();
         return null;
 
     }
@@ -433,7 +461,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             } while (cursor.moveToNext());
         }
-
+        cursor.close();
+        db.close();
         return list;
     }
 
@@ -445,8 +474,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, null);
 
         if(cursor.moveToFirst()){
+            cursor.close();
             return true;
         }
+        cursor.close();
         return false;
     }
 
@@ -461,11 +492,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor2 = db.rawQuery(query2, null);
 
         if (cursor.moveToFirst()){
+            cursor.close();
+            cursor2.close();
+            db.close();
             return true;
         }
         else if (cursor2.moveToFirst()){
+            cursor2.close();
+            cursor.close();
+            db.close();
             return true;
         }
+        cursor.close();
+        cursor2.close();
+        db.close();
         return false;
     }
 
@@ -476,8 +516,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){
+            cursor.close();
+            db.close();
             return true;
         }
+        cursor.close();
+        db.close();
         return false;
     }
 
@@ -497,8 +541,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             String instEmail = cursor.getString(5);
 
             Instructor inst = new Instructor(instId, instFname, instLname, instUname, instPword, instEmail);
+            cursor.close();
             return inst;
         }
+        cursor.close();
         return null;
 
     }
@@ -517,6 +563,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 classList.add(cls);
             }while(cursor.moveToNext());
         }
+        cursor.close();
         return classList;
     }
 
@@ -536,6 +583,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 instList.add(inst);
             }while(cursor.moveToNext());
         }
+        cursor.close();
         return instList;
     }
 
@@ -601,11 +649,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         //db.rawQuery(query, null);
         db.delete(TEACHES_TABLE, "CLASS_ID=?", new String[]{String.valueOf(classId)});
+        db.close();
     }
 
     public void deleteTeaches(int instId){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TEACHES_TABLE, "INSTRUCTOR_ID=?", new String[]{String.valueOf(instId)});
+        db.close();
     }
 
     public void deleteClassAssociation(String name){
@@ -617,6 +667,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             deleteClass(clsId);
             db.delete(TEACHES_TABLE, "CLASS_ID=?", new String[]{String.valueOf(clsId)});
         }
+        db.close();
     }
 
     public EnrolledClass addEnrolledClass(int startHour, int startMin, int endHour, int endMin, int orgClassId){
@@ -635,6 +686,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.insert(ENROLLED_CLASS_TABLE, null, cv);
 
         EnrolledClass ecls = new EnrolledClass(id, startHour, startMin, endHour, endMin, orgClassId);
+        db.close();
         return ecls;
     }
 
@@ -646,6 +698,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(E_CLASS_ID, e_classId);
 
         db.insert(ENROLLED_TABLE, null, cv);
+        db.close();
     }
 
     public boolean isMaXCapacity(int orgClassId){
@@ -664,8 +717,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
 
         if (currCapacity >= maxCapacity){
+            cursor.close();
+            db.close();
             return true;
         }
+        cursor.close();
+        db.close();
         return false;
     }
 
@@ -684,9 +741,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             int endMin = cursor.getInt(4);
             int orgClassId = cursor.getInt(5);
             EnrolledClass cls = new EnrolledClass(e_classid, startHour, startMin, endHour, endMin, orgClassId);
+            cursor.close();
             return cls;
         }
-        db.close();
+        cursor.close();
         return null;
     }
 
@@ -706,7 +764,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             }while(cursor.moveToNext());
         }
-        db.close();
+        cursor.close();
         return returnList;
     }
 
@@ -769,21 +827,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void removeEnrollAssociation(int e_clsId){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(ENROLLED_TABLE, "E_CLASS_ID=?", new String[]{String.valueOf(e_clsId)});
+        db.close();
     }
 
     public void removeEnrolledClass(int e_clsId){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(ENROLLED_CLASS_TABLE, "E_CLASS_ID=?", new String[]{String.valueOf(e_clsId)});
+        db.close();
+
     }
 
     public void deleteEnrolledAssociation(int memberId){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(ENROLLED_TABLE, "MEMBER_ID=?", new String[]{String.valueOf(memberId)});
+        db.close();
     }
 
     public void removeEnrolledClassWithId(int id){
         SQLiteDatabase db = getWritableDatabase();
         db.delete(ENROLLED_CLASS_TABLE, "CLASS_ID=?", new String[]{String.valueOf(id)});
+        db.close();
     }
 
     public ArrayList<Integer> findClassIds(String name){
@@ -799,6 +862,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 returnList.add(id);
             }while(cursor.moveToNext());
         }
+        cursor.close();
+        db.close();
         return returnList;
     }
 
@@ -823,7 +888,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             }while(cursor.moveToNext());
         }
+        cursor.close();
+        db.close();
         return returnList;
     }
-
 }

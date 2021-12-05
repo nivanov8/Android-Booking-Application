@@ -51,10 +51,12 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         System.out.println(size);
         for (int i = 0; i<size; i++){
             Class cls = classList.get(i);
-            classIds.add(cls.getId());
+
+            System.out.println(cls.getId());
             classNamesFull.add(cls.getName());
             if (cls.getHour() == -1){
                 classNames.add(cls.getName());
+                classIds.add(cls.getId());
             }
         }
 
@@ -84,6 +86,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        System.out.println(i);
         int id = classIds.get(i);
         String name = adapterView.getItemAtPosition(i).toString();
         Intent intent = new Intent(getApplicationContext(), Instructor_ScheduleClass.class);
