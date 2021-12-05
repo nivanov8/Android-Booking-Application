@@ -40,6 +40,10 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_member_unenroll_list.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\member_unenroll_list.xml"
+    },
+    {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_signup.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\signup.xml"
     },
@@ -80,12 +84,20 @@
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_member_view_my_classes.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\member_view_my_classes.xml"
+    },
+    {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_change_class_info.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\change_class_info.xml"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_main.xml.flat",
         "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\layout_member_unenroll_confirmation.xml.flat",
+        "source": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\src\\main\\res\\layout\\member_unenroll_confirmation.xml"
     },
     {
         "merged": "C:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",

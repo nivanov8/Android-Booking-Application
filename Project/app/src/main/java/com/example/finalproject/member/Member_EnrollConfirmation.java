@@ -52,14 +52,20 @@ public class Member_EnrollConfirmation extends AppCompatActivity {
         classEndHour = classStartHour + 1;
         classEndMin = classStartMin;
 
+        String startHour = classStartHour < 10 ? "0" + classStartHour : String.valueOf(classStartHour);
+        String startMin = classStartMin < 10 ? "0" + classStartMin : String.valueOf(classStartMin);
+        String endHour = classEndHour < 10 ? "0" + classEndHour : String.valueOf(classEndHour);
+        String endMin = classEndMin < 10 ? "0" + classEndMin : String.valueOf(classEndMin);
+
+
         //get textviews
         TextView name = (TextView) findViewById(R.id.className1);
         TextView day = (TextView) findViewById(R.id.classDay1);
         TextView startTime = (TextView) findViewById(R.id.classStartTime);
         TextView endTime = (TextView) findViewById(R.id.classEndTime);
 
-        String classStartTimeString = classStartHour + ":" + classStartMin;
-        String classEndTimeString = (classStartHour + 1) + ":" + classStartMin;
+        String classStartTimeString = startHour + ":" + startMin;
+        String classEndTimeString = endHour + ":" + endMin;
 
         //add to textviews
         name.append(className);

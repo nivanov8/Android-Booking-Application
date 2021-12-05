@@ -20,6 +20,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
+            android:name="com.example.finalproject.member.Member_UnenrollConfirmation"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_UnenrollList"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_ViewMyClasses"
+            android:exported="true" />
+        <activity
             android:name="com.example.finalproject.member.Member_EnrollConfirmation"
             android:exported="true" />
         <activity

@@ -50,11 +50,25 @@ public class Member_EnrollList extends AppCompatActivity implements AdapterView.
 
         ArrayList<String> names = new ArrayList<String>();
 
+
+
         int size = list.size();
         for(int i=0;i<size;i++){
             Class cls = list.get(i);
-            names.add(cls.getName() + " (" + cls.getDay() + " at " + cls.getHour() + ":" + cls.getMin() +
-                    " - " + (cls.getHour() + 1) + ":" + cls.getMin() + ")");
+
+            //adding 0 infront of numbers
+            int startHour1 = cls.getHour();
+            int startMin1 = cls.getMin();
+            int endHour1 = cls.getHour() + 1;
+            int endMin1 = cls.getMin();
+
+            String startHour = startHour1 < 10 ? "0" + startHour1 : String.valueOf(startHour1);
+            String startMin = startMin1 < 10 ? "0" + startMin1 : String.valueOf(startMin1);
+            String endHour = endHour1 < 10 ? "0" + endHour1 : String.valueOf(endHour1);
+            String endMin = endMin1 < 10 ? "0" + endMin1 : String.valueOf(endMin1);
+
+            names.add(cls.getName() + " (" + cls.getDay() + " at " + startHour + ":" + startMin +
+                    " - " + endHour+ ":" + endMin + ")");
             classIds.add(cls.getId());
             classNames.add(cls.getName());
         }
@@ -79,5 +93,12 @@ public class Member_EnrollList extends AppCompatActivity implements AdapterView.
 
         startActivity(intent);
         //System.out.println("We are here");
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        finish();
+        //startActivity(getIntent());
     }
 }

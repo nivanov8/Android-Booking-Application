@@ -61,6 +61,23 @@ public class DeleteClass extends AppCompatActivity implements AdapterView.OnItem
         int id = classIds.get(i);
 
         DataBaseHelper dbHelper = new DataBaseHelper(DeleteClass.this);
+        ArrayList<EnrolledClass> enrolledClassList;
+
+        ArrayList<Integer> list = dbHelper.findClassIds(name);
+        if(!list.isEmpty()){
+            for (int j = 0; j< list.size(); j++){
+                int cls_id = list.get(j);
+                System.out.println(cls_id);
+                enrolledClassList = dbHelper.findEnrolledClass(cls_id);
+                if(!enrolledClassList.isEmpty()){
+                    for (int k=0;k<enrolledClassList.size();k++){
+                        dbHelper.removeEnrollAssociation(enrolledClassList.get(k).getId());
+                    }
+                }
+                dbHelper.removeEnrolledClassWithId(cls_id);
+            }
+        }
+
         dbHelper.deleteClass(id);
         //remove from asscoiation
         dbHelper.deleteClassAssociation(name);

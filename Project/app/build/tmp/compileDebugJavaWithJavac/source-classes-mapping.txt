@@ -14,6 +14,8 @@ com/example/finalproject/instructor/Instructor_ViewMyClasses.java
  com.example.finalproject.instructor.Instructor_ViewMyClasses
 com/example/finalproject/baseadmin/MainActivity.java
  com.example.finalproject.baseadmin.MainActivity
+com/example/finalproject/member/Member_ViewMyClasses.java
+ com.example.finalproject.member.Member_ViewMyClasses
 com/example/finalproject/member/Member_EnrollConfirmation.java
  com.example.finalproject.member.Member_EnrollConfirmation
 com/example/finalproject/instructor/Instructor_EditClassList.java
@@ -52,12 +54,16 @@ com/example/finalproject/instructor/Instructor_CancelClassList.java
  com.example.finalproject.instructor.Instructor_CancelClassList
 com/example/finalproject/instructor/Instructor_ViewAllScheduled.java
  com.example.finalproject.instructor.Instructor_ViewAllScheduled
+com/example/finalproject/member/Member_UnenrollConfirmation.java
+ com.example.finalproject.member.Member_UnenrollConfirmation
 com/example/finalproject/baseadmin/ChangeClassInfo.java
  com.example.finalproject.baseadmin.ChangeClassInfo
 com/example/finalproject/baseadmin/User.java
  com.example.finalproject.baseadmin.User
 com/example/finalproject/baseadmin/DeleteUser.java
  com.example.finalproject.baseadmin.DeleteUser
+com/example/finalproject/member/Member_UnenrollList.java
+ com.example.finalproject.member.Member_UnenrollList
 com/example/finalproject/baseadmin/LoginPage.java
  com.example.finalproject.baseadmin.LoginPage
 com/example/finalproject/member/Member_ViewClassInfo.java

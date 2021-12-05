@@ -63,30 +63,40 @@ public class DeleteUser extends AppCompatActivity implements AdapterView.OnItemC
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         int id = userIds.get(i);
-        String type;
+        String type = null;
         if (users.get(i) instanceof Member){
             type = "member";
         }
         else if(users.get(i) instanceof Instructor){
             type = "instructor";
         }
-        //MAYBE CHANGE IN THE FUTURE
-        else{
-            type = "member";
-        }
 
-        DataBaseHelper dbHelper = new DataBaseHelper(DeleteUser.this);
-        dbHelper.deleteUser(id, type);
-        //delete all those classes he tuaght
-        ArrayList<Class> classes = dbHelper.findTaughtClasses(id);
-        int size = classes.size();
-        for (int j = 0; j<size; j++){
-            int clsId = classes.get(i).getId();
-            dbHelper.deleteClass(clsId);
+        if(type.equals("instructor")){
+            DataBaseHelper dbHelper = new DataBaseHelper(DeleteUser.this);
+            dbHelper.deleteUser(id, type);
+            //delete all those classes he tuaght
+            ArrayList<Class> classes = dbHelper.findTaughtClasses(id);
+            int size = classes.size();
+            for (int j = 0; j<size; j++){
+                int clsId = classes.get(i).getId();
+                dbHelper.deleteClass(clsId);
+            }
+            //delete association
+            dbHelper.deleteTeaches(id);
         }
-        //delete association
-        dbHelper.deleteTeaches(id);
+        else if (type.equals("member")){
+            DataBaseHelper dbHelper = new DataBaseHelper(this);
+            dbHelper.deleteUser(id, type);
+            //delete class enrolled associations and classes enrolled
 
+            ArrayList<EnrolledClass> e_classes = dbHelper.findAllEnrolledClasses(id);
+            int size = e_classes.size();
+            for(int j = 0; j<size; j++){
+                int e_clsId = e_classes.get(j).getId();
+                dbHelper.removeEnrolledClass(e_clsId);
+            }
+            dbHelper.deleteEnrolledAssociation(id);
+        }
 
         Toast.makeText(this, "Deleted User", Toast.LENGTH_SHORT).show();
         finish();

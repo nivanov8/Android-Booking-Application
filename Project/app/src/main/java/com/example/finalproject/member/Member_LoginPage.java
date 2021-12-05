@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalproject.R;
 import com.example.finalproject.baseadmin.Class;
 import com.example.finalproject.baseadmin.DataBaseHelper;
+import com.example.finalproject.baseadmin.MainActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,6 +48,29 @@ public class Member_LoginPage extends AppCompatActivity {
         intent.putExtra("firstname", firstname);
         intent.putExtra("username", username);
         intent.putExtra("memberId", id);
+        startActivity(intent);
+    }
+
+    public void onViewMyClasses(View view){
+        Intent intent = new Intent(getApplicationContext(), Member_ViewMyClasses.class);
+        intent.putExtra("type", type);
+        intent.putExtra("firstname", firstname);
+        intent.putExtra("username", username);
+        intent.putExtra("memberId", id);
+        startActivity(intent);
+    }
+
+    public void onUnenroll(View view){
+        Intent intent = new Intent(getApplicationContext(), Member_UnenrollList.class);
+        intent.putExtra("type", type);
+        intent.putExtra("firstname", firstname);
+        intent.putExtra("username", username);
+        intent.putExtra("memberId", id);
+        startActivity(intent);
+    }
+
+    public void onLogout(View view){
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
 }

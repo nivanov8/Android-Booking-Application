@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".member.Member_UnenrollConfirmation"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_UnenrollList"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_ViewMyClasses"
+            android:exported="true" />
+        <activity
             android:name=".member.Member_EnrollConfirmation"
             android:exported="true" />
         <activity

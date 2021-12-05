@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQuery;
 
 import androidx.annotation.Nullable;
 
@@ -685,6 +686,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             EnrolledClass cls = new EnrolledClass(e_classid, startHour, startMin, endHour, endMin, orgClassId);
             return cls;
         }
+        db.close();
         return null;
     }
 
@@ -704,6 +706,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             }while(cursor.moveToNext());
         }
+        db.close();
         return returnList;
     }
 
@@ -761,6 +764,66 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             }
         }
         return false;
-
     }
+
+    public void removeEnrollAssociation(int e_clsId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(ENROLLED_TABLE, "E_CLASS_ID=?", new String[]{String.valueOf(e_clsId)});
+    }
+
+    public void removeEnrolledClass(int e_clsId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(ENROLLED_CLASS_TABLE, "E_CLASS_ID=?", new String[]{String.valueOf(e_clsId)});
+    }
+
+    public void deleteEnrolledAssociation(int memberId){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(ENROLLED_TABLE, "MEMBER_ID=?", new String[]{String.valueOf(memberId)});
+    }
+
+    public void removeEnrolledClassWithId(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(ENROLLED_CLASS_TABLE, "CLASS_ID=?", new String[]{String.valueOf(id)});
+    }
+
+    public ArrayList<Integer> findClassIds(String name){
+        String query = "SELECT * FROM " + CLASS_TABLE + " WHERE " + CLASS_NAME + "=" + "'" + name + "'";
+        SQLiteDatabase db = getReadableDatabase();
+
+        ArrayList<Integer> returnList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                int id = cursor.getInt(0);
+                returnList.add(id);
+            }while(cursor.moveToNext());
+        }
+        return returnList;
+    }
+
+    public ArrayList<EnrolledClass> findEnrolledClass(int cls_id){
+        String query = "SELECT * FROM " + ENROLLED_CLASS_TABLE + " WHERE " + CLASS_ID + "=" + "'" + cls_id + "'";
+        SQLiteDatabase db = getReadableDatabase();
+
+        ArrayList<EnrolledClass> returnList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                int e_classid = cursor.getInt(0);
+                int startHour = cursor.getInt(1);
+                int startMin = cursor.getInt(2);
+                int endHour = cursor.getInt(3);
+                int endMin = cursor.getInt(4);
+                int orgClassId = cursor.getInt(5);
+                EnrolledClass cls = new EnrolledClass(e_classid, startHour, startMin, endHour, endMin, orgClassId);
+                returnList.add(cls);
+
+            }while(cursor.moveToNext());
+        }
+        return returnList;
+    }
+
 }

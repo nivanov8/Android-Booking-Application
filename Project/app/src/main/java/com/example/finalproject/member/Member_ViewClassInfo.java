@@ -37,12 +37,21 @@ public class Member_ViewClassInfo extends AppCompatActivity {
         Class cls = dbHelper.findClass(classId);
         String className = cls.getName();
         String classDescription = cls.getDescription();
-        int classHour = cls.getHour();
-        int classMin = cls.getMin();
+        int startHour = cls.getHour();
+        int startMin = cls.getMin();
+        int endHour = cls.getHour() + 1;
+        int endMin = cls.getMin();
         String classDifficulty = cls.getDifficulty();
         String classDay = cls.getDay();
         String classCapacity = String.valueOf(cls.getCapacity());
-        String classTime = classHour + ":" + classMin;
+
+        //add 0 where needed
+        String hour1 = startHour < 10 ? "0" + startHour : String.valueOf(startHour);
+        String min1 = startMin < 10 ? "0" + startMin : String.valueOf(startMin);
+        String hour2 = endHour < 10 ? "0" + endHour : String.valueOf(endHour);
+        String min2 = endMin < 10 ? "0" + endMin : String.valueOf(endMin);
+
+        String classTime = hour1 + ":" + min1 + " - " + hour2 + ":" + min2;
 
         //add class attributes to screen
         name.append(className);
