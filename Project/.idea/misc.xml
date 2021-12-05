@@ -13,10 +13,16 @@
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_login_page.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_schedule_class.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_schedule_class_list.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_view_my_classes.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_view_my_classes.xml" value="0.25" />
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/instructor_view_my_classes_list.xml" value="0.26268115942028986" />
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/insutrctor_view_all_scheduled.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/login.xml" value="0.26268115942028986" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/member_enroll_confirmation.xml" value="0.33" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/member_enroll_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/member_login_page.xml" value="0.33" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/member_view_class_info.xml" value="0.33" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/member_view_sched_classes.xml" value="0.33" />
+        <entry key="..\:/Users/nicki/Desktop/Project/Project/app/src/main/res/layout/signup.xml" value="0.20108695652173914" />
       </map>
     </option>
   </component>

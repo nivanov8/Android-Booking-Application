@@ -20,6 +20,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
     private ArrayList<Class> classList;
     private ArrayList<String> classNames;
     private ArrayList<Integer> classIds;
+    private ArrayList<String> classNamesFull;
     private ListView classLV;
     private int instructorId;
     private String username;
@@ -43,6 +44,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         classList = dbHelper.getAllClasses();
         classNames = new ArrayList<String>();
         classIds = new ArrayList<Integer>();
+        classNamesFull = new ArrayList<>();
         classLV = findViewById(R.id.classes);
 
         int size = classList.size();
@@ -50,6 +52,7 @@ public class Instructor_ScheduleClassList extends AppCompatActivity implements A
         for (int i = 0; i<size; i++){
             Class cls = classList.get(i);
             classIds.add(cls.getId());
+            classNamesFull.add(cls.getName());
             if (cls.getHour() == -1){
                 classNames.add(cls.getName());
             }

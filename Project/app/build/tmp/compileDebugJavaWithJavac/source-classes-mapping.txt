@@ -4,6 +4,8 @@ com/example/finalproject/baseadmin/Login.java
  com.example.finalproject.baseadmin.Login
 com/example/finalproject/instructor/Instructor_EditClass.java
  com.example.finalproject.instructor.Instructor_EditClass
+com/example/finalproject/baseadmin/EnrolledClass.java
+ com.example.finalproject.baseadmin.EnrolledClass
 com/example/finalproject/baseadmin/DataBaseHelper.java
  com.example.finalproject.baseadmin.DataBaseHelper
 com/example/finalproject/instructor/Instructor_ViewMyClassesList.java
@@ -12,6 +14,8 @@ com/example/finalproject/instructor/Instructor_ViewMyClasses.java
  com.example.finalproject.instructor.Instructor_ViewMyClasses
 com/example/finalproject/baseadmin/MainActivity.java
  com.example.finalproject.baseadmin.MainActivity
+com/example/finalproject/member/Member_EnrollConfirmation.java
+ com.example.finalproject.member.Member_EnrollConfirmation
 com/example/finalproject/instructor/Instructor_EditClassList.java
  com.example.finalproject.instructor.Instructor_EditClassList
 com/example/finalproject/instructor/Instructor_ScheduleClassList.java
@@ -22,6 +26,10 @@ com/example/finalproject/baseadmin/Class.java
  com.example.finalproject.baseadmin.Class
 com/example/finalproject/baseadmin/CreateClass.java
  com.example.finalproject.baseadmin.CreateClass
+com/example/finalproject/member/Member_LoginPage.java
+ com.example.finalproject.member.Member_LoginPage
+com/example/finalproject/member/Member_ViewSchedClasses.java
+ com.example.finalproject.member.Member_ViewSchedClasses
 com/example/finalproject/instructor/Instructor_ScheduleClass.java
  com.example.finalproject.instructor.Instructor_ScheduleClass
 com/example/finalproject/baseadmin/DeleteClass.java
@@ -30,6 +38,8 @@ com/example/finalproject/baseadmin/Signup.java
  com.example.finalproject.baseadmin.Signup
 com/example/finalproject/baseadmin/EditClass.java
  com.example.finalproject.baseadmin.EditClass
+com/example/finalproject/member/Member_EnrollList.java
+ com.example.finalproject.member.Member_EnrollList
 com/example/finalproject/instructor/InstructorLoginPage.java
  com.example.finalproject.instructor.InstructorLoginPage
 com/example/finalproject/baseadmin/AdminPage.java
@@ -50,3 +60,5 @@ com/example/finalproject/baseadmin/DeleteUser.java
  com.example.finalproject.baseadmin.DeleteUser
 com/example/finalproject/baseadmin/LoginPage.java
  com.example.finalproject.baseadmin.LoginPage
+com/example/finalproject/member/Member_ViewClassInfo.java
+ com.example.finalproject.member.Member_ViewClassInfo

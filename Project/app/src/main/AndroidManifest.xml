@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject">
         <activity
+            android:name=".member.Member_EnrollConfirmation"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_EnrollList"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_ViewClassInfo"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_ViewSchedClasses"
+            android:exported="true" />
+        <activity
+            android:name=".member.Member_LoginPage"
+            android:exported="true" />
+        <activity
             android:name=".instructor.Instructor_CancelClassList"
             android:exported="true" />
         <activity

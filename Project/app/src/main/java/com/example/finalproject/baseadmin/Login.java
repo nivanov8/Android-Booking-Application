@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.finalproject.R;
 import com.example.finalproject.instructor.InstructorLoginPage;
+import com.example.finalproject.member.Member_LoginPage;
 
 public class Login extends AppCompatActivity {
 
@@ -48,13 +49,15 @@ public class Login extends AppCompatActivity {
             if (foundUser instanceof Member){
                 Member user = (Member) foundUser;
 
-                Intent intent = new Intent(getApplicationContext(), LoginPage.class);
+                Intent intent = new Intent(getApplicationContext(), Member_LoginPage.class);
                 String fname = user.getFirstname();
                 String uname = user.getUsername();
+                int id = user.getId();
 
                 intent.putExtra("type", "member");
                 intent.putExtra("firstname", fname);
                 intent.putExtra("username", uname);
+                intent.putExtra("memberId", id);
                 startActivity(intent);
             }
             else if (foundUser instanceof Instructor){

@@ -1,8 +1,10 @@
-#Fri Nov 19 19:58:45 EST 2021
+#Sat Dec 04 21:19:40 EST 2021
+path.4=2/classes.dex
 path.3=11/classes.dex
 path.2=12/classes.dex
 path.1=0/classes.dex
 path.0=classes.dex
+base.4=C\:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
 base.3=C\:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
 base.2=C\:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
 base.1=C\:\\Users\\nicki\\Desktop\\Project\\Project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
@@ -11,3 +13,4 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
+renamed.4=classes5.dex

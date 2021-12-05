@@ -20,6 +20,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.FinalProject" >
         <activity
+            android:name="com.example.finalproject.member.Member_EnrollConfirmation"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_EnrollList"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_ViewClassInfo"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_ViewSchedClasses"
+            android:exported="true" />
+        <activity
+            android:name="com.example.finalproject.member.Member_LoginPage"
+            android:exported="true" />
+        <activity
             android:name="com.example.finalproject.instructor.Instructor_CancelClassList"
             android:exported="true" />
         <activity

@@ -40,6 +40,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String TEACHES_TABLE = "TEACHES_TABLE";
 
+    public static final String ENROLLED_CLASS_TABLE = "ENROLLED_CLASS_TABLE";
+    public static final String E_CLASS_ID = "E_CLASS_ID";
+    public static final String E_CLASS_START_HOUR = "E_CLASS_START_HOUR";
+    public static final String E_CLASS_START_MIN = "E_CLASS_START_MIN";
+    public static final String E_CLASS_END_HOUR = "E_CLASS_END_HOUR";
+    public static final String E_CLASS_END_MIN = "E_CLASS_END_MIN";
+
+    public static final String ENROLLED_TABLE = "ENROLLED_TABLE";
 
     public DataBaseHelper(@Nullable Context context) {
         super(context, "users.db", null, 1);
@@ -63,11 +71,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 " INTEGER, " + "FOREIGN KEY (" + INSTRUCTOR_ID + ") REFERENCES " + INSTRUCTOR_TABLE + "(" + INSTRUCTOR_ID +
                 "), FOREIGN KEY (" + CLASS_ID + ") REFERENCES " + CLASS_TABLE + "(" + CLASS_ID + "))";
 
+        String createEnrolledClassTable = "CREATE TABLE " + ENROLLED_CLASS_TABLE + " (" + E_CLASS_ID + " INTEGER PRIMARY KEY, " + E_CLASS_START_HOUR +
+                " TEXT, " + E_CLASS_START_MIN + " TEXT, " + E_CLASS_END_HOUR + " TEXT, " + E_CLASS_END_MIN + " TEXT, " +
+                CLASS_ID + " INTEGER, " + "FOREIGN KEY (" + CLASS_ID + ") REFERENCES " + CLASS_TABLE + "(" + CLASS_ID + "))";
+
+        String createEnrolledTable = "CREATE TABLE " + ENROLLED_TABLE + " ( " + MEMBER_ID + " INTEGER, " + E_CLASS_ID +
+                " INTEGER, " + "FOREIGN KEY (" + MEMBER_ID + ") REFERENCES " + MEMBER_TABLE + "(" + MEMBER_ID + "), FOREIGN KEY (" +
+                E_CLASS_ID + ") REFERENCES " + ENROLLED_CLASS_TABLE + "(" + E_CLASS_ID + "))";
 
         db.execSQL(createInstructorsTable);
         db.execSQL(createMembersTable);
         db.execSQL(createClassTable);
         db.execSQL(createTeachesTables);
+        db.execSQL(createEnrolledClassTable);
+        db.execSQL(createEnrolledTable);
     }
 
     @Override
@@ -502,6 +519,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return classList;
     }
 
+
+
     public ArrayList<Instructor> getAllScheduledInstrcutors(){
         String query = "SELECT * FROM " + TEACHES_TABLE;
 
@@ -535,6 +554,26 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         int instSize = instList.size();
         for(int i =0;i<instSize;i++){
             if(input.equals(instList.get(i).getFirstname())){
+                returnList.add(classList.get(i));
+            }
+        }
+        return returnList;
+    }
+
+    public ArrayList<Class> findAllScheduledClassesMember(String input){
+        ArrayList<Class> classList = getAllScheduledClasses();
+
+        ArrayList<Class> returnList = new ArrayList<>();
+
+        int clsSize = classList.size();
+        for (int i = 0; i<clsSize; i++){
+            if(input.equals(classList.get(i).getName())){
+                returnList.add(classList.get(i));
+            }
+        }
+
+        for (int i=0;i<clsSize;i++){
+            if (input.equals(classList.get(i).getDay())){
                 returnList.add(classList.get(i));
             }
         }
@@ -577,5 +616,151 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             deleteClass(clsId);
             db.delete(TEACHES_TABLE, "CLASS_ID=?", new String[]{String.valueOf(clsId)});
         }
+    }
+
+    public EnrolledClass addEnrolledClass(int startHour, int startMin, int endHour, int endMin, int orgClassId){
+        int id = getMaxClassId(ENROLLED_CLASS_TABLE, E_CLASS_ID);
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(E_CLASS_ID, id);
+        cv.put(E_CLASS_START_HOUR, startHour);
+        cv.put(E_CLASS_START_MIN, startMin);
+        cv.put(E_CLASS_END_HOUR, endHour);
+        cv.put(E_CLASS_END_MIN, endMin);
+        cv.put(CLASS_ID, orgClassId);
+
+        db.insert(ENROLLED_CLASS_TABLE, null, cv);
+
+        EnrolledClass ecls = new EnrolledClass(id, startHour, startMin, endHour, endMin, orgClassId);
+        return ecls;
+    }
+
+    public void addEnrolledAssociation(int memberId, int e_classId){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(MEMBER_ID, memberId);
+        cv.put(E_CLASS_ID, e_classId);
+
+        db.insert(ENROLLED_TABLE, null, cv);
+    }
+
+    public boolean isMaXCapacity(int orgClassId){
+        int maxCapacity = findClass(orgClassId).getCapacity();
+
+        String query = "SELECT * FROM " + ENROLLED_CLASS_TABLE + " WHERE " + CLASS_ID + "=" + "'" + orgClassId + "'";
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        int currCapacity = 0;
+        if(cursor.moveToFirst()){
+            do{
+                currCapacity++;
+            }while(cursor.moveToNext());
+        }
+
+        if (currCapacity >= maxCapacity){
+            return true;
+        }
+        return false;
+    }
+
+    // make method to return EnrolledClass from enrolled class id
+    public EnrolledClass getEnrolledClass(int e_classId){
+        String query = "SELECT * FROM " + ENROLLED_CLASS_TABLE + " WHERE " + E_CLASS_ID + "=" + "'" + e_classId + "'";
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            int e_classid = cursor.getInt(0);
+            int startHour = cursor.getInt(1);
+            int startMin = cursor.getInt(2);
+            int endHour = cursor.getInt(3);
+            int endMin = cursor.getInt(4);
+            int orgClassId = cursor.getInt(5);
+            EnrolledClass cls = new EnrolledClass(e_classid, startHour, startMin, endHour, endMin, orgClassId);
+            return cls;
+        }
+        return null;
+    }
+
+    public ArrayList<EnrolledClass> findAllEnrolledClasses(int memberId){
+        String query = "SELECT * FROM " + ENROLLED_TABLE + " WHERE " + MEMBER_ID + "=" + "'" + memberId + "'";
+        SQLiteDatabase db = getReadableDatabase();
+
+        ArrayList<EnrolledClass> returnList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                int e_id = cursor.getInt(1);
+                EnrolledClass cls = getEnrolledClass(e_id);
+
+                returnList.add(cls);
+
+            }while(cursor.moveToNext());
+        }
+        return returnList;
+    }
+
+    public boolean isAtSameTime(int memberId, int checkHour, int checkMin){
+        ArrayList<EnrolledClass> list = findAllEnrolledClasses(memberId);
+
+        int size = list.size();
+        if(size > 0){
+            for (int i = 0; i< size; i++){
+                EnrolledClass cls = list.get(i);
+                int startHour = cls.getStartHour();
+                int startMin = cls.getStartMin();
+                int endHour = cls.getEndHour();
+                int endMin = cls.getEndMin();
+
+                if(startHour - checkHour == 1){
+                    if(checkMin <= startMin){
+                        return false;
+                    }
+                    return true;
+                }
+
+                else if(checkHour - endHour == 1){
+                    if(checkMin >= endMin){
+                        return false;
+                    }
+                    return true;
+                }
+
+                else if(startHour - checkHour > 1){
+                    return false;
+                }
+                else if (checkHour - endHour > 1){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isTakenOnSameDay(int memberId, String classDay){
+        ArrayList<EnrolledClass> list = findAllEnrolledClasses(memberId);
+
+        int size = list.size();
+        for(int i = 0; i<size; i++){
+            EnrolledClass e_cls = list.get(i);
+            int id = e_cls.getClassOrgId();
+            Class cls = findClass(id);
+
+            if(cls.getDay().equals(classDay)){
+                return true;
+            }
+        }
+        return false;
+
     }
 }
